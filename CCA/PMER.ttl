@@ -1,0 +1,45 @@
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/iadopt/challenge/> .
+
+<http://example.org/meteo/PMER>
+    a 
+        iop:Variable ;
+    rdfs:label 
+        "Mean sea level pressure" ;
+    skos:definition 
+        """Mean sea level pressure expressed in Pa""" ;
+   rdfs:comment 
+"""pressure; location: mean sea level; ADD: atmosphere""" ; 
+ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/115" ;
+    iop:hasObjectOfInterest 
+        <https://www.wikidata.org/entity/Q7391292> ;
+    iop:hasContextObject 
+        <https://www.wikidata.org/entity/Q8104> ;
+    iop:hasProperty 
+        <https://www.wikidata.org/entity/Q39552> ;
+    iop:hasConstraint 
+        [ a iop:Constraint ;
+             rdfs:label "location: mean sea level" ;
+             iop:constrains <https://www.wikidata.org/entity/Q7391292> ;
+        ] .
+
+<https://www.wikidata.org/entity/Q7391292>
+    a 
+        iop:Entity ;
+    rdfs:label 
+        "air" .
+
+<https://www.wikidata.org/entity/Q39552>
+    a 
+        iop:Property ;
+    rdfs:label 
+        "pressure" .
+
+<https://www.wikidata.org/entity/Q8104>
+    a 
+        iop:Entity ;
+    rdfs:label 
+        "atmosphere" .

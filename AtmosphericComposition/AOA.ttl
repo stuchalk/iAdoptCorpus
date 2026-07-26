@@ -1,0 +1,37 @@
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/iadopt/> .
+
+ex:AOA
+    a 
+        iop:Variable ;
+    rdfs:label 
+        "Aircraft Angle of Attack." ;
+    rdfs:comment 
+        """Aircraft Angle of Attack measured in degrees. The angle at which a straight line from the leading edge to the training edge of an aircraft’s wing meets the relative wind. """ ;
+    iop:hasObjectOfInterest 
+        <https://www.wikidata.org/entity/Q11436> ;
+    iop:hasMatrix 
+        <https://www.wikidata.org/entity/Q8094> ;
+    iop:hasProperty 
+        <https://qudt.org/vocab/quantitykind/AngleOfAttack> .
+
+<https://www.wikidata.org/entity/Q11436>
+    a 
+        iop:Entity ;
+    rdfs:label 
+        "aircraft" .
+
+<https://www.wikidata.org/entity/Q8094>
+    a 
+        iop:Entity ;
+    rdfs:label 
+        "wind" .
+
+<https://qudt.org/vocab/quantitykind/AngleOfAttack>
+    a 
+        iop:Property ;
+    rdfs:label 
+        "angle of attack" .

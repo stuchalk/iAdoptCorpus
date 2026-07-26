@@ -1,0 +1,62 @@
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/iadopt/challenge/> .
+
+<http://example.org/EnvScience/PotEvap>
+    a 
+        iop:Variable ;
+    rdfs:label 
+        "Potential evaporation" ;
+    skos:definition "Potential evaporation l m⁻² s⁻¹";
+    rdfs:comment "condition: evaporated, condition: at non-limiting water supply, soil, volume flux, flow, water, atmosphere" ;
+    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/125";
+    iop:hasObjectOfInterest 
+        ex:OoI ;
+    iop:hasMatrix 
+        _:b0 ;
+    iop:hasProperty 
+        <https://www.wikidata.org/entity/Q55753416> ;
+    iop:hasConstraint 
+        [ a iop:Constraint ;
+             rdfs:label "condition: at non-limiting water supply" ;
+             iop:constrains ex:OoI ;
+        ] ,
+        [ a iop:Constraint ;
+             rdfs:label "condition: evaporated" ;
+             iop:constrains ex:OoI ;
+        ] .
+
+ex:OoI
+    a 
+        iop:Entity ;
+    rdfs:label 
+        "water" .
+
+_:b0
+    a 
+        iop:Entity ,
+        iop:AsymmetricSystem ;
+    iop:hasSource 
+        <https://www.wikidata.org/entity/Q36133> ;
+    iop:hasTarget 
+        <https://www.wikidata.org/entity/Q8104> .
+
+<https://www.wikidata.org/entity/Q55753416>
+    a 
+        iop:Property ;
+    rdfs:label 
+        "volume flux" .
+
+<https://www.wikidata.org/entity/Q36133>
+    a 
+        iop:Entity ;
+    rdfs:label 
+        "soil" .
+
+<https://www.wikidata.org/entity/Q8104>
+    a 
+        iop:Entity ;
+    rdfs:label 
+        "atmosphere" .
