@@ -11,11 +11,11 @@ ex:C3
     skos:definition "The amount of sky estimated to be covered by all cloud types." ;
     rdfs:comment "sky; cloud; amount covered -> area fraction; ADD: area per area" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/9" ;
-    iop:hasObjectOfInterest iop:System ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction> .
 
-iop:System
-    a iop:Entity, iop:AsymmetricSystem ;
+iop:AsymmetricSystem
+    a iop:Entity ;
     iop:hasDenominator <https://www.wikidata.org/entity/Q527> ;
     iop:hasNumerator <https://www.wikidata.org/entity/Q8074> .
 

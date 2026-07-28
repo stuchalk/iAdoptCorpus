@@ -11,21 +11,21 @@ ex:C6
     rdfs:comment "Mass flux; carbon; soil; vegetation; due to senescence. From indicates the source, into indicates the target." ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/12" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q623> ;
-    iop:hasMatrix iop:System ;
+    iop:hasMatrix iop:AsymmetricSystem ;
     iop:hasProperty <http://vocabs.lter-europe.net/EnvThes/30361> ;
     iop:hasConstraint
         [ a iop:Constraint ;
             rdfs:isDefinedBy "process" ;
             rdfs:label "senescence" ;
-            iop:constrains iop:System ;
+            iop:constrains iop:AsymmetricSystem ;
         ] .
 
 <https://www.wikidata.org/entity/Q623>
     a iop:Entity ;
     rdfs:label "carbon" .
 
-iop:System
-    a iop:Entity, iop:AsymmetricSystem ;
+iop:AsymmetricSystem
+    a iop:Entity ;
     rdfs:label "flow" ;
     iop:hasSource <http://vocabs.lter-europe.net/EnvThes/20535> ;
     iop:hasTarget <http://vocabs.lter-europe.net/EnvThes/24> .

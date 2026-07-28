@@ -5,33 +5,22 @@
 @prefix ex: <http://example.org/iadopt/> .
 
 ex:AOA
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Aircraft Angle of Attack." ;
-    rdfs:comment 
-        """Aircraft Angle of Attack measured in degrees. The angle at which a straight line from the leading edge to the training edge of an aircraft’s wing meets the relative wind. """ ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q11436> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q8094> ;
-    iop:hasProperty 
-        <https://qudt.org/vocab/quantitykind/AngleOfAttack> .
+    a iop:Variable ;
+    rdfs:label "Aircraft angle of attack." ;
+    rdfs:comment "Aircraft angle of attack measured in degrees." ;
+    skos:definition "The angle at which a straight line from the leading edge to the training edge of an aircraft’s wing meets the relative wind." ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q11436> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q8094> ;
+    iop:hasProperty <https://qudt.org/vocab/quantitykind/AngleOfAttack> .
 
 <https://www.wikidata.org/entity/Q11436>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "aircraft" .
+    a iop:Entity ;
+    rdfs:label "aircraft" .
 
 <https://www.wikidata.org/entity/Q8094>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "wind" .
+    a iop:Entity ;
+    rdfs:label "wind" .
 
 <https://qudt.org/vocab/quantitykind/AngleOfAttack>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "angle of attack" .
+    a iop:Property ;
+    rdfs:label "angle of attack" .
