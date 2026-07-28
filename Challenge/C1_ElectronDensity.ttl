@@ -10,11 +10,11 @@ ex:C1
     rdfs:label "Electron density in the solar wind" ;
     rdfs:comment "Density (particle per cm3) of electrons measured in the Solar Wind." ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/7" ;
-    iop:hasObjectOfInterest iop:System ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/entity/Q108914962> .
 
-iop:System
-    a iop:Entity, iop:AsymmetricSystem ;
+iop:AsymmetricSystem
+    a iop:Entity ;
     iop:hasNumerator <https://www.wikidata.org/entity/Q2225> ;
     iop:hasDenominator <https://www.wikidata.org/entity/Q79833> .
 

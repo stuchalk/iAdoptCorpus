@@ -8,7 +8,7 @@ ex:C8
     a iop:Variable ;
     rdfs:label "Coarse woody debris abundance" ;
     rdfs:comment "Coarse woody debris (CWD) abundance per hectare measured from all the plots scaled to a hectare (m2/hectare)." ;
-    iop:hasObjectOfInterest iop:System ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
@@ -17,8 +17,8 @@ ex:C8
             iop:constrains <https://www.wikidata.org/entity/Q36133> ;
         ] .
 
-iop:System
-    a iop:Entity, iop:AsymmetricSystem ;
+iop:AsymmetricSystem
+    a iop:Entity ;
     iop:hasNumerator <https://www.wikidata.org/entity/Q2069734> ;
     iop:hasDenominator <https://www.wikidata.org/entity/Q36133> .
 

@@ -3,72 +3,54 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
 
 ex:C13
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Distance to nearest neighbour habitat patch" ;
-    skos:definition """Distance to nearest neighbour habitat patch to measure the degree of connection of EUNIS habitats within a landscape. https://github.com/EuropaBON/EBV-Descriptions/entity/Terrestrial-Connectivity-of-terrestrial-ecosystem-habitat-types""" ;
+    a iop:Variable ;
+    rdfs:label "Distance to nearest neighbour habitat patch" ;
+    skos:definition "Distance to nearest neighbour habitat patch to measure the degree of connection of EUNIS habitats within a landscape." ;
+    rdf:subject "https://github.com/EuropaBON/EBV-Descriptions/entity/Terrestrial-Connectivity-of-terrestrial-ecosystem-habitat-types" ;
     rdfs:comment "habitat patch system, distance, habitat patch, habitat patch, nearest neighbour -> location: nearest neighbour, ADD: type: specfic EUNIS habitat, landscape region, minimum" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/19" ;
-    iop:hasObjectOfInterest 
-        ex:C13_OoI18 ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q25496956> ;
-    iop:hasStatisticalModifier 
-        <https://www.wikidata.org/entity/Q10585806> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q126017> ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/19" ;
+    iop:hasObjectOfInterest ex:AsymmetricSystem ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q25496956> ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q10585806> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q126017> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "nearest neighbour" ;
-             iop:constrains ex:C13_OoI18_part2 ;
+            rdfs:isDefinedBy "condition" ;
+            rdfs:label "nearest" ;
+            iop:constrains ex:C13_OoI18_part2 ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "type: specific EUNIS habitat" ;
-             iop:constrains ex:C13_OoI18 ;
+            rdfs:isDefinedBy "codelist" ;
+            rdfs:label "EUNIS habitat type" ;
+            iop:constrains ex:AsymmetricSystem ;
         ] .
 
-ex:C13_OoI18
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    rdfs:label 
-        "habitat patch system" ;
+ex:AsymmetricSystem
+    a iop:Entity ;
+    rdfs:label "habitat patch system" ;
     iop:hasSource 
-        ex:C13_OoI18_part1 ;
+        ex:sourcepatch;
     iop:hasTarget 
-        ex:C13_OoI18_part2 .
+        ex:targetpatch .
 
 <https://www.wikidata.org/entity/Q25496956>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "landscape region" .
+    a iop:Entity ;
+    rdfs:label "landscape region" .
 
 <https://www.wikidata.org/entity/Q10585806>
-    a 
-        iop:StatisticalModifier ;
-    rdfs:label 
-        "minimum" .
+    a iop:StatisticalModifier ;
+    rdfs:label "minimum" .
 
 <https://www.wikidata.org/entity/Q126017>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "distance" .
+    a iop:Property ;
+    rdfs:label "distance" .
 
-ex:C13_OoI18_part1
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "habitat patch" .
+ex:sourcepatch
+    a iop:Entity ;
+    rdfs:label "habitat patch" .
 
-ex:C13_OoI18_part2
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "habitat patch" .
+ex:targetpatch
+    a iop:Entity ;
+    rdfs:label "habitat patch" .

@@ -3,51 +3,33 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
 
 ex:C9
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Foliage projective cover in the lower canopy strata" ;
-    rdfs:comment 
-        """The proportion (percentage) of the ground area covered by foliage (or photosynthetic tissue) in the lower canopy strata.""" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        uom:AreaFraction ;
+    a iop:Variable ;
+    rdfs:label "Foliage projective cover in the lower canopy strata" ;
+    rdfs:comment "The proportion (percentage) of the ground area covered by foliage (or photosynthetic tissue) in the lower canopy strata." ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "layer: lower canopy strata" ;
-             iop:constrains <https://www.wikidata.org/entity/Q18250160> ;
+            rdfs:isDefinedBy "part" ;
+            rdfs:label "lower canopy strata" ;
+            iop:constrains <https://www.wikidata.org/entity/Q18250160> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q112117182> ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q18250160> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q112117182> ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q18250160> .
 
-uom:AreaFraction
-    a 
-        iop:Property ;
-    rdfs:label 
-        "area fraction" .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction>
+    a iop:Property ;
+    rdfs:label "area fraction" .
 
 <https://www.wikidata.org/entity/Q112117182>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "study area" .
+    a iop:Entity ;
+    rdfs:label "study area" .
 
 <https://www.wikidata.org/entity/Q18250160>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "foliage" .
+    a iop:Entity ;
+    rdfs:label "foliage" .
