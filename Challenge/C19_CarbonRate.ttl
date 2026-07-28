@@ -6,78 +6,58 @@
 
 
 ex:C19
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Weight specific-ingestion Carbon rate at 15 °C" ;
-    skos:definition 
-        """Weight specific-ingestion Carbon rate at 15 °C. The amount of carbon consumed by an organism at non-limiting concentration of food relative to the individual dry weight measured at 15°C. It is expressed as μg C mg DW−1 h−1""" ;
+    a iop:Variable ;
+    rdfs:label "Weight specific-ingestion Carbon rate at 15 °C" ;
+    skos:definition "Weight specific-ingestion Carbon rate at 15 °C. The amount of carbon consumed by an organism at non-limiting concentration of food relative to the individual dry weight measured at 15°C. It is expressed as μg C mg DW−1 h−1" ;
     rdfs:comment "Carbon, at non-limiting conditions -> condition: under non-limiting conditions, food, organism, dry; mass flow rate; at 15°C temperature" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/25" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasMatrix 
-        _:b1 ;
-    iop:hasProperty 
-        <hhttps://www.wikidata.org/entity/Q3265048> ;
+    rdfs:comment "SJC: the property should be food consumption rate (not found on Wikidata)**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/25" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasMatrix iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q3265048> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "at 15°C temperature" ;
-             iop:constrains <hhttps://www.wikidata.org/entity/Q3265048> ;
+            rdfs:isDefinedBy "condition" ;
+            rdfs:label "temperature: 15°C" ;
+            iop:constrains <hhttps://www.wikidata.org/entity/Q3265048> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "condition: at non-limiting conditions" ;
-             iop:constrains <https://www.wikidata.org/entity/Q2095> ;
+            rdfs:isDefinedBy "consumption rate" ;
+            rdfs:label "non-limiting" ;
+            iop:constrains <https://www.wikidata.org/entity/Q2095> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "state: dry" ;
-             iop:constrains <https://www.wikidata.org/entity/Q795052> ;
+            rdfs:isDefinedBy "processing" ;
+            rdfs:label "dried" ;
+            iop:constrains <https://www.wikidata.org/entity/Q795052> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q623> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q795052> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q623> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q795052> .
 
-_:b1
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasSource 
-        <https://www.wikidata.org/entity/Q2095> ;
-    iop:hasTarget 
-        <https://www.wikidata.org/entity/Q7239> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasSource <https://www.wikidata.org/entity/Q2095> ;
+    iop:hasTarget <https://www.wikidata.org/entity/Q7239> .
 
 <hhttps://www.wikidata.org/entity/Q3265048>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass flow rate" .
+    a iop:Property ;
+    rdfs:label "mass flow rate" .
 
 <https://www.wikidata.org/entity/Q623>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "Carbon" .
+    a iop:Entity ;
+    rdfs:label "Carbon" .
 
 <https://www.wikidata.org/entity/Q795052>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "individual" .
+    a iop:Entity ;
+    rdfs:label "individual" .
 
 <https://www.wikidata.org/entity/Q2095>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "food" .
+    a iop:Entity ;
+    rdfs:label "food" .
 
 <https://www.wikidata.org/entity/Q7239>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "organism" .
+    a iop:Entity ;
+    rdfs:label "organism" .

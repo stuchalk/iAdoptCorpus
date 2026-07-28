@@ -3,51 +3,34 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
 
 ex:C20
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Concentration of DDT impacted by industry" ;
-    rdfs:comment 
-        """Concentration of DDT in a given year at a site impacted by industry, measured in ng/g.""" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q672821> ;
+    a iop:Variable ;
+    rdfs:label "Concentration of DDT impacted by industry" ;
+    rdfs:comment "Concentration of DDT in a given year at a site impacted by industry, measured in ng/g." ;
+    rdfs:comment "SJC: property changed to mass fraction**" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q899138> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "origin: industry" ;
-             iop:constrains <https://www.wikidata.org/entity/Q163648> ;
+            rdfs:isDefinedBy "source" ;
+            rdfs:label "industry" ;
+            iop:constrains <https://www.wikidata.org/entity/Q163648> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q163648> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q36133> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q163648> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q36133> .
 
-<https://www.wikidata.org/entity/Q672821>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "amount of substance concentration" .
+<https://www.wikidata.org/wiki/Q899138>
+    a iop:Property ;
+    rdfs:label "mass fraction" .
 
 <https://www.wikidata.org/entity/Q163648>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "DDT" .
+    a iop:Entity ;
+    rdfs:label "DDT" .
 
 <https://www.wikidata.org/entity/Q36133>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "soil" .
+    a iop:Entity ;
+    rdfs:label "soil" .
