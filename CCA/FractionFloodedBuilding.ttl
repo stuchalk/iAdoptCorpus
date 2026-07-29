@@ -2,56 +2,39 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
+@prefix ex: <http://example.org/iadopt/> .
 
 ex:FractionFloodedBuilding
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Fraction of flooded area around building" ;
-    rdfs:comment 
-        """Fraction of flooded area above 30 cm water level within a 5 m buffer around an affected building""" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        uom:AreaFraction ;
+    a iop:Variable ;
+    rdfs:label "Fraction of flooded area around building" ;
+    rdfs:comment "Fraction of flooded area above 30 cm water level within a 5 m buffer around an affected building" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: flooded more than 30 cm above ground" ;
-             iop:constrains _:b1 ;
+            rdfs:isDefinedBy "condition" ;
+            rdfs:label "water level: > 30 cm above ground" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q8068> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "spatial extent: buffer area of 5m around an affected building" ;
-             iop:constrains _:b2 ;
+            rdfs:isDefinedBy "spatial extent" ;
+            rdfs:label "area of 5 m around an affected building" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q3257686> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        _:b1 ;
-    iop:hasDenominator 
-        _:b2 .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/wiki/Q8068> ;
+    iop:hasDenominator <https://www.wikidata.org/wiki/Q3257686> .
 
-uom:AreaFraction
-    a 
-        iop:Property ;
-    rdfs:label 
-        "area fraction" .
+<http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction>
+    a iop:Property ;
+    rdfs:label "area fraction" .
 
-_:b1
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "flooded area" .
+<https://www.wikidata.org/wiki/Q8068>
+    a iop:Entity ;
+    rdfs:label "flood" .
 
-_:b2
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "surrounding area" .
+<https://www.wikidata.org/wiki/Q3257686>
+    a iop:Entity ;
+    rdfs:label "locality" .

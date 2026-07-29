@@ -2,67 +2,51 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/challenge/> .
+@prefix ex: <http://example.org/iadopt/> .
 
 ex:nitrCon
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Labile detrital nitrogen concentration in the seabed" ;
-    skos:definition 
-        """Labile detrital nitrogen concentration in the seabed in mmoleN/kg in sediment.""" ;
-    rdfs:comment 
-        """Labile detrital nitrogen concentration in the seabed in mmoleN/kg in sediment.""" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/88" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q165> ;
-    iop:hasProperty 
-        <https://qudt.org/vocab/quantitykind/AmountOfSubstancePerMass> ;
+    a iop:Variable ;
+    rdfs:label "Labile detrital nitrogen concentration in the seabed" ;
+    skos:definition "Labile detrital nitrogen concentration in the seabed in mmole N/kg in sediment." ;
+    rdfs:comment "Labile detrital nitrogen concentration in the seabed in mmole N/kg in sediment." ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/88" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q165> ;
+    iop:hasProperty <https://qudt.org/vocab/quantitykind/AmountOfSubstancePerMass> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "original: detrital organic matter" ;
-             iop:constrains <https://www.wikidata.org/entity/Q627> ;
+            rdfs:isDefinedBy "source" ;
+            rdfs:label "detrital matter" ;
+            iop:constrains <https://www.wikidata.org/entity/Q627> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "state: labile" ;
-             iop:constrains <https://www.wikidata.org/entity/Q627> ;
+            rdfs:isDefinedBy "physical state" ;
+            rdfs:label "labile" ;
+            iop:constrains <https://www.wikidata.org/entity/Q627> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "location: seabed" ;
-             iop:constrains <https://www.wikidata.org/entity/Q180184> ;
+            rdfs:isDefinedBy "location" ;
+            rdfs:label "seabed" ;
+            iop:constrains <https://www.wikidata.org/entity/Q180184> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q180184> ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q627> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q180184> ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q627> .
 
 <https://www.wikidata.org/entity/Q165>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "sea" .
+    a iop:Entity ;
+    rdfs:label "sea" .
 
 <https://qudt.org/vocab/quantitykind/AmountOfSubstancePerMass>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "amount of substance per mass" .
+    a iop:Property ;
+    rdfs:label "amount of substance per mass" .
 
 <https://www.wikidata.org/entity/Q180184>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "sediment" .
+    a iop:Entity ;
+    rdfs:label "sediment" .
 
 <https://www.wikidata.org/entity/Q627>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "nitrogen" .
+    a iop:Entity ;
+    rdfs:label "nitrogen" .
