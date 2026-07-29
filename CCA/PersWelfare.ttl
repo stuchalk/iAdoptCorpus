@@ -2,49 +2,38 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
+@prefix ex: <http://example.org/iadopt/> .
 
 ex:PersWelfare
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Number of persons receiving welfare in a statistical unit" ;
-    skos:definition 
-        """number of persons receiving welfare in a statistical unit which is defined as a grouping of homogeneous neighboring building blocks""" ;
-    rdfs:comment 
-        """number of persons receiving welfare in a statistical unit which is defined as a grouping of homogeneous neighboring building blocks""" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/93" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q215627> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q3409269> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q11563> ;
+    a iop:Variable ;
+    rdfs:label "Number of persons receiving welfare in a statistical unit" ;
+    skos:definition "number of persons receiving welfare in a statistical unit which is defined as a grouping of homogeneous neighboring building blocks" ;
+    rdfs:comment "number of persons receiving welfare in a statistical unit which is defined as a grouping of homogeneous neighboring building blocks" ;
+    rdfs:comment "SJC: property should be 'count' not 'number'" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/93" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q215627> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q3409269> ;
+    iop:hasProperty <http://qudt.org/vocab/quantitykind/Count> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: receiving welfare" ;
-             iop:constrains <https://www.wikidata.org/entity/Q215627> ;
+            rdfs:isDefinedBy "demographics" ;
+            rdfs:label "receiving welfare" ;
+            iop:constrains <https://www.wikidata.org/entity/Q215627> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "defined by: grouping of homogeneous neighboring building blocks" ;
-             iop:constrains <https://www.wikidata.org/entity/Q3409269> ;
+            rdfs:isDefinedBy "scope" ;
+            rdfs:label "grouping of homogeneous neighboring building blocks" ;
+            iop:constrains <https://www.wikidata.org/entity/Q3409269> ;
         ] .
 
 <https://www.wikidata.org/entity/Q215627>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q3409269>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "statistical unit" .
+    a iop:Entity ;
+    rdfs:label "statistical unit" .
 
-<https://www.wikidata.org/entity/Q11563>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "number" .
+<http://qudt.org/vocab/quantitykind/Count>
+    a iop:Property ;
+    rdfs:label "count" .

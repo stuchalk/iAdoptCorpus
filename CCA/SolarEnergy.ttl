@@ -2,52 +2,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ex: <http://example.org/iadopt/> .
 
 <http://example.org/CCA/SolarEnergy>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Solar energy production of building per month" ;
-    skos:definition 
-        """Solar energy production of building in kWh""" ;
-    rdfs:comment 
-        """Solar energy production of building in kWh""" ;
-   ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/131" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q40015> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q41176> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q11379> ;
-    iop:hasConstraint 
+    a iop:Variable ;
+    rdfs:label "Solar energy production of building per month" ;
+    skos:definition "Solar energy production of building in kWh" ;
+    rdfs:comment "Solar energy production of building in kWh" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/131" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/wiki/Q217941> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q40015> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q11379> ;
+    iop:hasContextObject <https://www.wikidata.org/entity/Q41176> ;
+    iop:hasConstraint
         [ a iop:Constraint ;
-             rdfs:label "origin: photovoltaik panel" ;
-             iop:constrains <https://www.wikidata.org/entity/Q40015> ;
-        ] ,
-        [ a iop:Constraint ;
-             rdfs:label "temporal extent: month" ;
-             iop:constrains <https://www.wikidata.org/entity/Q11379> ;
+            rdfs:isDefinedBy "temporal extent" ;
+            rdfs:label "month" ;
+            iop:constrains <https://www.wikidata.org/entity/Q11379> ;
         ] .
 
 <https://www.wikidata.org/entity/Q40015>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "solar energy" .
+    a iop:Entity ;
+    rdfs:label "solar energy" .
+
+<https://www.wikidata.org/wiki/Q217941>
+    a iop:Entity ;
+    rdfs:label "solar panel" .
 
 <https://www.wikidata.org/entity/Q41176>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "building" .
+    a iop:Entity ;
+    rdfs:label "building" .
 
 <https://www.wikidata.org/entity/Q11379>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "energy" .
+    a iop:Property ;
+    rdfs:label "energy" .

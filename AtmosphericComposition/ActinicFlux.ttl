@@ -10,12 +10,9 @@ ex:ActinicFlux
     skos:definition "Upwelling component of actinic flux in wavelength range of 297-640 nm measured in photons/s/cm2/nm" ;
     rdfs:comment "Upwelling component of actinic flux in wavelength range of 297-640 nm measured in photons/s/cm2/nm" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/103" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q18335> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q8104> ;
-    iop:hasProperty 
-        <https://goldbook.iupac.org/terms/view/A00086> ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q18335> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q8104> ;
+    iop:hasProperty <https://goldbook.iupac.org/terms/view/A00086> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
             rdfs:isDefinedBy "range" ;
