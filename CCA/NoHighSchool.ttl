@@ -3,56 +3,45 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
 
 ex:NoHighSchool
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Average number of persons without high school diploma during the last three years within a statistical unit" ;
-    rdfs:comment 
-        """Average number of persons without high school diploma during the last three years in a statistical unit which is defined as a grouping of homogeneous neighboring building blocks""" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q215627> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q3409269> ;
-    iop:hasStatisticalModifier 
-        <https://www.wikidata.org/wiki/Q19033> ;
-    iop:hasProperty 
-        <https://qudt.org/vocab/quantitykind/Count> ;
+    a iop:Variable ;
+    rdfs:label "Average number of persons without high school diploma during the last three years within a statistical unit" ;
+    rdfs:comment "Average number of persons without a high school diploma during the last three years in a statistical unit, defined as a grouping of homogeneous neighboring building blocks" ;
+    rdfs:comment "SJC: separated educational level and timeframe in constraints**" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q215627> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q3409269> ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/wiki/Q19033> ;
+    iop:hasProperty <https://qudt.org/vocab/quantitykind/Count> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: without high school diploma in the past three years" ;
-             iop:constrains <https://www.wikidata.org/entity/Q215627> ;
+            rdfs:isDefinedBy "education" ;
+            rdfs:label "no high school diploma" ;
+            iop:constrains <https://www.wikidata.org/entity/Q215627> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "defined by: grouping of homogeneous neighboring building blocks" ;
-             iop:constrains <https://www.wikidata.org/entity/Q3409269> ;
+            rdfs:isDefinedBy "temporal extent" ;
+            rdfs:label "time: previous three years" ;
+            iop:constrains <https://www.wikidata.org/entity/Q215627> ;
+        ] ,
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "scope" ;
+            rdfs:label "grouping of homogeneous neighboring building blocks" ;
+            iop:constrains <https://www.wikidata.org/entity/Q3409269> ;
         ] .
 
 <https://www.wikidata.org/entity/Q215627>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q3409269>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "statistical unit" .
+    a iop:Entity ;
+    rdfs:label "statistical unit" .
 
 <https://www.wikidata.org/wiki/Q19033>
-    a 
-        iop:StatisticalModifier ;
-    rdfs:label 
-        "arithmetic mean" .
+    a iop:StatisticalModifier ;
+    rdfs:label "arithmetic mean" .
 
 <https://qudt.org/vocab/quantitykind/Count>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "count" .
+    a iop:Property ;
+    rdfs:label "count" .
