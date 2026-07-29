@@ -5,46 +5,39 @@
 @prefix ex: <http://example.org/iadopt/challenge/> .
 
 <http://example.org/CCA/SnowEquiv>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Snow water equivalent" ;
+    a iop:Variable ;
+    rdfs:label "Snow water equivalent" ;
     skos:definition "Snow Water Equivalent or Surface Snow Amount is the mass of water per unit area (kg/m²)";
     rdfs:comment "condition: if the snow melted, snow, water, surface density" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/128";
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q1907514> ;
+    rdfs:comment "SJC: property is mass, and needs a normalization constraint of 'per square meter'" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/128";
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q11423> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: if the snow melted" ;
-             iop:constrains <https://www.wikidata.org/entity/Q7561> ;
+            rdfs:isDefinedBy "process" ;
+            rdfs:label "melting" ;
+            iop:constrains <https://www.wikidata.org/entity/Q7561> ;
+        ] ,
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "normalization";
+            rdfs:label "per square meter" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q11423> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q283> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q7561> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q283> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q7561> .
 
-<https://www.wikidata.org/entity/Q1907514>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "surface density" .
+<https://www.wikidata.org/wiki/Q11423>
+    a iop:Property ;
+    rdfs:label "mass" .
 
 <https://www.wikidata.org/entity/Q283>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water" .
+    a iop:Entity ;
+    rdfs:label "water" .
 
 <https://www.wikidata.org/entity/Q7561>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "snow" .
+    a iop:Entity ;
+    rdfs:label "snow" .

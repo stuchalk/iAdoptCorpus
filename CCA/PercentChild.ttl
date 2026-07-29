@@ -2,68 +2,50 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix ex: <http://example.org/iadopt/> .
 
 ex:PercentChild
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Percentage of number of children" ;
-    rdfs:comment 
-        """Percentage of number of children under 10 years versus total number of people dwelling in the buildings within a statistical unit which is defined as a grouping of homogeneous neighboring building blocks""" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q3409269> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q11229> ;
+    a iop:Variable ;
+    rdfs:label "Percentage of number of children" ;
+    rdfs:comment "Percentage of number of children under 10 years versus total number of people dwelling in the buildings within a statistical unit which is defined as a grouping of homogeneous neighboring building blocks" ;
+    rdfs:comment "SJC: changed property to 'occupancy' which can be represented as a percentage**" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q3409269> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q7075743> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "defined by: grouping of homogeneous neighboring building blocks" ;
-             iop:constrains <https://www.wikidata.org/entity/Q3409269> ;
+            rdfs:isDefinedBy "scope" ;
+            rdfs:label "grouping of homogeneous neighboring building blocks" ;
+            iop:constrains <https://www.wikidata.org/entity/Q3409269> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "condition: age under 10 years" ;
-             iop:constrains <https://www.wikidata.org/entity/Q7569> ;
+            rdfs:isDefinedBy "condition" ;
+            rdfs:label "age < 10 years" ;
+            iop:constrains <https://www.wikidata.org/entity/Q7569> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "condition: dwelling in the buildings within the statistical unit" ;
-             iop:constrains _:b0 ;
+            rdfs:isDefinedBy "demographics" ;
+            rdfs:label "dwelling in the buildings within the statistical unit" ;
+            iop:constrains iop:AsymmetricSystem ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q215627> ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q7569> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q215627> ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q7569> .
 
 <https://www.wikidata.org/entity/Q3409269>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "statistical unit" .
+    a iop:Entity ;
+    rdfs:label "statistical unit" .
 
-<https://www.wikidata.org/entity/Q11229>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "percentage" .
+<https://www.wikidata.org/wiki/Q7075743>
+    a iop:Property ;
+    rdfs:label "percentage" .
 
 <https://www.wikidata.org/entity/Q215627>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q7569>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "child" .
+    a iop:Entity ;
+    rdfs:label "child" .

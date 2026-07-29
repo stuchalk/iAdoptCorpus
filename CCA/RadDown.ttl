@@ -5,64 +5,48 @@
 @prefix ex: <http://example.org/iadopt/challenge/> .
 
 <http://example.org/iadopt/AtmosphericComposition/RadDown>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Surface long-wave (thermal) radiation downwards" ;
-    skos:definition 
-        """Surface long-wave (thermal) radiation downwards measured in Wm-2""" ;
-    rdfs:comment 
-        """Surface-> location: at the surface; long-wave; radiation; downwards; measured in Wm-2-> energy flux; ADD: study area; ground; atmosphere""" ;
-   ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/109" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q18335> ;
-    iop:hasMatrix 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q5377054> ;
+    a iop:Variable ;
+    rdfs:label "Surface long-wave (thermal) radiation downwards" ;
+    skos:definition "Surface long-wave (thermal) radiation downwards measured in W m^{-2}" ;
+    rdfs:comment "Surface-> location: at the surface; long-wave; radiation; downwards; measured in W m^{-2} -> energy flux; ADD: study area; ground; atmosphere" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/109" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q18335> ;
+    iop:hasMatrix iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q5377054> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "type: long-wave" ;
-             iop:constrains <https://www.wikidata.org/entity/Q18335> ;
+            rdfs:isDefinedBy "spectral region" ;
+            rdfs:label "infrared (long-wave)" ;
+            iop:constrains <https://www.wikidata.org/entity/Q18335> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "type: downwards" ;
-             iop:constrains <https://www.wikidata.org/entity/Q18335> ;
+            rdfs:isDefinedBy "direction" ;
+            rdfs:label "downwards" ;
+            iop:constrains <https://www.wikidata.org/entity/Q18335> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "location: at the surface" ;
-             iop:constrains <https://www.wikidata.org/entity/Q6501125> ;
+            rdfs:isDefinedBy "part" ;
+            rdfs:label "surface" ;
+            iop:constrains <https://www.wikidata.org/entity/Q6501125> ;
         ] .
 
 <https://www.wikidata.org/entity/Q18335>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "radiation" .
+    a iop:Entity ;
+    rdfs:label "radiation" .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasSource 
-        <https://www.wikidata.org/entity/Q8104> ;
-    iop:hasTarget 
-        <https://www.wikidata.org/entity/Q6501125> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasSource <https://www.wikidata.org/entity/Q8104> ;
+    iop:hasTarget <https://www.wikidata.org/entity/Q6501125> .
 
 <https://www.wikidata.org/entity/Q5377054>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "energy flux" .
+    a iop:Property ;
+    rdfs:label "energy flux" .
 
 <https://www.wikidata.org/entity/Q8104>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "atmosphere" .
+    a iop:Entity ;
+    rdfs:label "atmosphere" .
 
 <https://www.wikidata.org/entity/Q6501125>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "ground" .
+    a iop:Entity ;
+    rdfs:label "ground" .
