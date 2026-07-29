@@ -3,49 +3,36 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/challenge/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
 
 ex:C29
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Nervosity feelings" ;
-    skos:definition
-        """In the past 30 days, how often did you feel nervous?""" ;
-    rdfs:comment
-        """feel -> feeling; nervous -> type:nervous; during last 30 days; ADD: person; frequency""" ;
-    ex:issue
-        "https://github.com/mabablue/I-ADOPT-examples-playground/issues/35" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q205555> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q5> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q11652> ;
+    a iop:Variable ;
+    rdfs:label "Nervosity feelings" ;
+    skos:definition "In the past 30 days, how often did you feel nervous?" ;
+    rdfs:comment "feel -> feeling; nervous -> type:nervous; during last 30 days; ADD: person; frequency" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/35" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q205555> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q5> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q614112> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "temporal extent: during last 30 days" ;
-             iop:constrains <https://www.wikidata.org/entity/Q11652> ;
+            rdfs:isDefinedBy "normalization";
+            rdfs:label "during last 30 days" ;
+            iop:constrains <https://www.wikidata.org/entity/Q614112> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "type: nervous" ;
-             iop:constrains <https://www.wikidata.org/entity/Q205555> ;
+            rdfs:isDefinedBy "mental state";
+            rdfs:label "nervousness" ;
+            iop:constrains <https://www.wikidata.org/entity/Q205555> ;
         ] .
 
 <https://www.wikidata.org/entity/Q205555>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "feeling" .
+    a iop:Entity ;
+    rdfs:label "feeling" .
 
 <https://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
-<https://www.wikidata.org/entity/Q11652>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "frequency" .
+<https://www.wikidata.org/wiki/Q614112>
+    a iop:Property ;
+    rdfs:label "count" .

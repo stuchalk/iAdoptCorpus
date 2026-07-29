@@ -5,61 +5,53 @@
 @prefix ex: <http://example.org/iadopt/challenge/> .
 
 ex:C24
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "dose of applied nanomaterial internalised by a specific cell (number per cell)" ;
-    skos:definition 
-        """ Number of particles internalised into the cell over the duration of the experiment""" ;
-    rdfs:comment
-        """nanomaterial; cell; number per cell; location: intracellular, duration of the experiment; ADD: group of cells""" ;
-    ex:issue
-        "https://github.com/mabablue/I-ADOPT-examples-playground/issues/30" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q20088819> ;
-    iop:hasProperty 
-        _:b1 ;
+    a iop:Variable ;
+    rdfs:label "dose of applied nanomaterial internalised by a specific cell (number per cell)" ;
+    skos:definition "Number of particles internalised into the cell over the duration of the experiment" ;
+    rdfs:comment "nanomaterial; cell; number per cell; location: intracellular, duration of the experiment; ADD: group of cells" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/30" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q20088819> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q614112> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "location: intracellular" ;
-             iop:constrains _:b0 ;
+            rdfs:isDefinedBy "location";
+            rdfs:label "intracellular" ;
+            iop:constrains iop:AsymmetricSystem ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "time extent. duration of the experiment" ;
-             iop:constrains _:b1 ;
+            rdfs:isDefinedBy "temporal extent";
+            rdfs:label "experiment duration" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q614112> ;
+        ]  ,
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "normalization";
+            rdfs:label "per cell" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q614112> ;
+        ],
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "physical form";
+            rdfs:label "particle" ;
+            iop:constrains <https://www.wikidata.org/entity/Q967847> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q967847> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q7868> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q967847> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q7868> .
 
 <https://www.wikidata.org/entity/Q20088819>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "group of cells" .
+    a iop:Entity ;
+    rdfs:label "group of cells" .
 
-_:b1
-    a 
-        iop:Property ;
-    rdfs:label 
-        "number per entity" .
+<https://www.wikidata.org/wiki/Q614112>
+    a iop:Property ;
+    rdfs:label "number of entities" .
 
 <https://www.wikidata.org/entity/Q967847>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "nanomaterial" .
+    a iop:Entity ;
+    rdfs:label "nanomaterial" .
 
 <https://www.wikidata.org/entity/Q7868>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "cell" .
+    a iop:Entity ;
+    rdfs:label "cell" .
