@@ -4,7 +4,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/meteo/VAS>
+ex:VAS
     a iop:Variable ;
     rdfs:label "Northward Near-Surface Wind" ;
     skos:definition "Northward Near-Surface Wind (v-component), measured in m s⁻¹" ;

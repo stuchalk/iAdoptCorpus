@@ -4,7 +4,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/CCA/SolarEnergy>
+ex:SolarEnergy
     a iop:Variable ;
     rdfs:label "Solar energy production of building per month" ;
     skos:definition "Solar energy production of building in kWh" ;
