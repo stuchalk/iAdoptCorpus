@@ -2,14 +2,14 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/challenge/> .
+@prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/CCA/SnowEquiv>
+ex:SnowEquiv
     a iop:Variable ;
     rdfs:label "Snow water equivalent" ;
     skos:definition "Snow Water Equivalent or Surface Snow Amount is the mass of water per unit area (kg/m²)";
     rdfs:comment "condition: if the snow melted, snow, water, surface density" ;
-    rdfs:comment "SJC: property is mass, and needs a normalization constraint of 'per square meter'" ;
+    rdfs:comment "SJC: property is mass, and needs a normalization constraint of 'per square meter'**" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/128";
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/wiki/Q11423> ;

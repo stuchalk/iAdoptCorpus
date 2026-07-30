@@ -2,9 +2,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/challenge/> .
+@prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/iadopt/AtmosphericComposition/RadDown>
+ex:RadDown
     a iop:Variable ;
     rdfs:label "Surface long-wave (thermal) radiation downwards" ;
     skos:definition "Surface long-wave (thermal) radiation downwards measured in W m^{-2}" ;

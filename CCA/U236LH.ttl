@@ -4,47 +4,33 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/CCA/U236LH>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Atomic number of U236 from La Hague" ;
-    rdfs:comment 
-        """Atomic number of Uranium-236 in sea water from discharges of the nuclear fuel reprocessing plant at La Hage, France. Uranium-236 is a radioactive isotope of element Iodine, with a half-life of about 23.4 million years.
-Units: atoms kg-1""" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        _:b1 ;
+ex:U236LH
+    a iop:Variable ;
+    rdfs:label "Atomic number of U236 from La Hague" ;
+    rdfs:comment "Atomic number of Uranium-236 in sea water from discharges of the nuclear fuel reprocessing plant at La Hage, France. Uranium-236 is a radioactive isotope of element Iodine, with a half-life of about 23.4 million years. Units: atoms kg-1" ;
+    rdfs:comment "SJC: change property to number density per unit mass**" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q139568528> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "origin: discharges of the nuclear fuel reprocessing plant at La Hage, France" ;
-             iop:constrains <https://www.wikidata.org/entity/Q5955496> ;
+            rdfs:isDefinedBy "source" ;
+            rdfs:label "discharges of the nuclear fuel reprocessing plant at La Hage, France" ;
+            iop:constrains <https://www.wikidata.org/entity/Q5955496> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q184395> ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q5955496> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q184395> ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q5955496> .
 
-_:b1
-    a 
-        iop:Property ;
-    rdfs:label 
-        "atoms per mass" .
+<https://www.wikidata.org/wiki/Q139568528>
+    a iop:Property ;
+    rdfs:label "number density per unit mass" .
 
 <https://www.wikidata.org/entity/Q184395>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "sea water" .
+    a iop:Entity ;
+    rdfs:label "sea water" .
 
 <https://www.wikidata.org/entity/Q5955496>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "Uranium 236" .
+    a iop:Entity ;
+    rdfs:label "Uranium 236" .

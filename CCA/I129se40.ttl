@@ -4,12 +4,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/CCA/I129se40>
+ex:I129se40
     a iop:Variable ;
     rdfs:label "I129 deposition from Ringhals of Sweden" ;
     skos:definition "I129 deposition from Ringhals of Sweden (I129se40) in atoms kg-1" ;
     rdfs:comment "origin: Ringhals nuclear plant, condition: deposited, atoms per mass, Iodine-129, soil";
-    rdfs:comment "SJC: change propoerty to number density per unit mass**" ;
+    rdfs:comment "SJC: change property to number density per unit mass**" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/135";
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/wiki/Q139568528> ;
