@@ -4,51 +4,41 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-
-<http://example.org/iadopt/neurology/>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "BPM Mean heart rate" ;
-    skos:definition 
-        """BPM mean heart rate (beats per minute, ECG-derived)""" ;    
-    rdfs:comment 
-        """contractions; patient; mean; frequency; type: heart; ADD:patient""" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/105" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q127006> ;
-    iop:hasMatrix 
-        <hhttps://www.wikidata.org/entity/Q5> ;
-    iop:hasStatisticalModifier 
-        <https://www.wikidata.org/entity/Q2796622> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q11652> ;
+ex:heartrate
+    a iop:Variable ;
+    rdfs:label "BPM Mean heart rate" ;
+    skos:definition "BPM mean heart rate (beats per minute, ECG-derived)" ;
+    rdfs:comment "contractions; patient; mean; frequency; type: heart; ADD:patient" ;
+    rdfs:comment "SJC: property changed to hearbeat; add normalization 'per minute'" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/105" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q127006> ;
+    iop:hasMatrix <hhttps://www.wikidata.org/entity/Q5> ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q2796622> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q5165683> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "type: heart" ;
-             iop:constrains <https://www.wikidata.org/entity/Q127006> ;
+            rdfs:isDefinedBy "organism part" ;
+            rdfs:label "heart" ;
+            iop:constrains <https://www.wikidata.org/entity/Q127006> ;
+        ],
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "normalization";
+            rdfs:label "per minute" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q5165683> ;
         ] .
 
 <https://www.wikidata.org/entity/Q127006>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "contractions" .
+    a iop:Entity ;
+    rdfs:label "muscle contraction" .
 
 <hhttps://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q2796622>
-    a 
-        iop:StatisticalModifier ;
-    rdfs:label 
-        "mean" .
+    a iop:StatisticalModifier ;
+    rdfs:label "mean" .
 
-<https://www.wikidata.org/entity/Q11652>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "frequency" .
+<https://www.wikidata.org/wiki/Q5165683>
+    a iop:Property ;
+    rdfs:label "heartbeat" .

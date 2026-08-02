@@ -4,46 +4,28 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/iadopt/env/Alcat>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Concentration of Al cations in water" ;
-    rdfs:comment 
-        """Concentration of Al cations in water""" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/wiki/Q672821> ;
-    iop:hasConstraint 
-        [ a iop:Constraint ;
-             rdfs:label "type: aluminium" ;
-             iop:constrains <https://www.wikidata.org/entity/Q326277> ;
-        ] .
+ex:Alcat
+    a iop:Variable ;
+    rdfs:label "Concentration of Al cations in water" ;
+    rdfs:comment "Concentration of Al cations in water" ;
+    rdfs:comment "SJC: changed aluminum to aluminum ion " ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/121" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q672821> .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q283> ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q326277> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q283> ;
+    iop:hasNumerator <https://www.wikidata.org/wiki/Q27104698> .
 
 <https://www.wikidata.org/wiki/Q672821>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "amount of substance concentration" .
+    a iop:Property ;
+    rdfs:label "amount of substance concentration" .
 
 <https://www.wikidata.org/entity/Q283>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water" .
+    a iop:Entity ;
+    rdfs:label "water" .
 
-<https://www.wikidata.org/entity/Q326277>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "cation" .
+<https://www.wikidata.org/wiki/Q27104698>
+    a iop:Entity ;
+    rdfs:label "aluminum ion" .

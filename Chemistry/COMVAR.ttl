@@ -38,7 +38,7 @@ ex:combvar
 
 <https://www.wikidata.org/entity/Q76933>
     a iop:Entity ;
-    rdfs:label "hexanol (C6H14O)" .
+    rdfs:label "hexanol" .
 
 <https://www.wikidata.org/entity/Q133235>
     a iop:Entity ;

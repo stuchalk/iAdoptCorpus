@@ -3,47 +3,34 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
 
 <http://example.org/iadopt/clinical/Pain>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Chronic pain grade scale" ;
-    rdfs:comment 
-        """Category: Clinical, Unit: descriptional/grade of a scale""" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/wiki/Q81938> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/wiki/Q5> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/wiki/Q18185> ;
+    a iop:Variable ;
+    rdfs:label "Chronic pain grade scale" ;
+    rdfs:comment "Category: Clinical, Unit: descriptional/grade of a scale" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/wiki/Q81938> ;
+    iop:hasMatrix <https://www.wikidata.org/wiki/Q5> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q18185> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "temporal extent: chronic" ;
-             iop:constrains <https://www.wikidata.org/wiki/Q81938> ;
+            rdfs:isDefinedBy "temporal extent" ;
+            rdfs:label "chronic" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q81938> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "role: patient" ;
-             iop:constrains <https://www.wikidata.org/wiki/Q5> ;
+            rdfs:isDefinedBy "role" ;
+            rdfs:label "patient" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q5> ;
         ] .
 
 <https://www.wikidata.org/wiki/Q81938>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "pain" .
+    a iop:Entity ;
+    rdfs:label "pain" .
 
 <https://www.wikidata.org/wiki/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/wiki/Q18185>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "grade" .
+    a iop:Property ;
+    rdfs:label "grade" .

@@ -5,29 +5,21 @@
 @prefix ex: <http://example.org/iadopt/> .
 
 <http://example.org/iadopt/clinical/HRV>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "HRV Heart rate variabilty" ;
-    skos:definition
-          """HRV- Heart rate variability, Category: ECG metrics, Ontology: BMONT Unit: milliseconds (ms)""" ;      
-    rdfs:comment 
-        """contractions; person; ADD: role:patient; variation; time interval; type: heart; interval: n+(n+1)""" ;
-    ex:issue
-        "https://github.com/mabablue/I-ADOPT-examples-playground/issues/106" ;
-
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q127006> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q5> ;
-    iop:hasStatisticalModifier 
-        <https://www.wikidata.org/entity/Q175199> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q186081> ;
+    a iop:Variable ;
+    rdfs:label "HRV Heart rate variabilty" ;
+    skos:definition "HRV - Heart rate variability, Category: ECG metrics, Ontology: BMONT Unit: milliseconds (ms)" ;
+    rdfs:comment "contractions; person; ADD: role:patient; variation; time interval; type: heart; interval: n+(n+1)" ;
+    rdfs:comment "SJC: i think that 'variance' should not be included. It has a specific meaning in statistics; use HRV instead" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/106" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q127006> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q5> ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q175199> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q186081> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "type: heart" ;
-             iop:constrains <https://www.wikidata.org/entity/Q127006> ;
+            rdfs:isDefinedBy "organism part" ;
+            rdfs:label "heart" ;
+            iop:constrains <https://www.wikidata.org/entity/Q127006> ;
         ] ,
         [ a iop:Constraint ;
              rdfs:label "interval: n+(n+1)" ;
@@ -39,25 +31,17 @@
         ] .
 
 <https://www.wikidata.org/entity/Q127006>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "muscle contractions" .
+    a iop:Entity ;
+    rdfs:label "muscle contraction" .
 
 <https://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q175199>
-    a 
-        iop:StatisticalModifier ;
-    rdfs:label 
-        "variance" .
+    a iop:StatisticalModifier ;
+    rdfs:label "variance" .
 
 <https://www.wikidata.org/entity/Q186081>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "time interval" .
+    a iop:Property ;
+    rdfs:label "time interval" .
