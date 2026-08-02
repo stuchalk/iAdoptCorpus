@@ -4,51 +4,38 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/iadopt/env/ConcCarbon>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Concentration of dissolved organic carbon in water" ;
-    rdfs:comment 
-        """Mass concentration of dissolved organic carbon in water""" ;
-ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/119" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q589446> ;
+ex:ConcCarbon
+    a iop:Variable ;
+    rdfs:label "Concentration of dissolved organic carbon in water" ;
+    rdfs:comment "Mass concentration of dissolved organic carbon in water" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/119" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q589446> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "state: dissolved" ;
-             iop:constrains <https://www.wikidata.org/entity/Q623> ;
+            rdfs:isDefinedBy "state" ;
+            rdfs:label "dissolved" ;
+            iop:constrains <https://www.wikidata.org/entity/Q623> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "type: organic" ;
-             iop:constrains <https://www.wikidata.org/entity/Q623> ;
+            rdfs:isDefinedBy "class" ;
+            rdfs:label "organic" ;
+            iop:constrains <https://www.wikidata.org/entity/Q623> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q623> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q283> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q623> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q283> .
 
 <https://www.wikidata.org/entity/Q589446>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass concentration" .
+    a iop:Property ;
+    rdfs:label "mass concentration" .
 
 <https://www.wikidata.org/entity/Q623>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "carbon" .
+    a iop:Entity ;
+    rdfs:label "carbon" .
 
 <https://www.wikidata.org/entity/Q283>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water" .
+    a iop:Entity ;
+    rdfs:label "water" .

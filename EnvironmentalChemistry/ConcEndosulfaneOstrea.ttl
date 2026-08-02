@@ -5,56 +5,38 @@
 @prefix ex: <http://example.org/bio/example/> .
 
 ex:EC1
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "concentration of endosulfane sulfate in wet flesh of ostrea edulis" ;
-    skos:definition 
-        """Mass concentration of endosulfane sulfate in wet flesh of ostrea edulis, measured in μg/kg.""" ;
-    rdfs:comment
-        """Mass fraction; endosulfane sulfate; wet; flesh->body; ostrea edulis; ADD: ratio: mass per  mass.""" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/89" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q729678> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q899138> ;
+    a iop:Variable ;
+    rdfs:label "concentration of endosulfane sulfate in wet flesh of ostrea edulis" ;
+    skos:definition "Mass concentration of endosulfane sulfate in wet flesh of ostrea edulis, measured in μg/kg." ;
+    rdfs:comment "Mass fraction; endosulfane sulfate; wet; flesh->body; ostrea edulis; ADD: ratio: mass per mass." ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/89" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q729678> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q899138> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "state:wet" ;
-             iop:constrains <https://www.wikidata.org/entity/Q13119823> ;
+            rdfs:isDefinedBy "state" ;
+            rdfs:label "hydrated" ;
+          iop:constrains <https://www.wikidata.org/entity/Q13119823> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <http://vocab.nerc.ac.uk/collection/S27/current/CS003625/> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q13119823> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <http://vocab.nerc.ac.uk/collection/S27/current/CS003625/> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q13119823> .
 
 <https://www.wikidata.org/entity/Q729678>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "ostrea edulis" .
+    a iop:Entity ;
+    rdfs:label "ostrea edulis" .
 
 <https://www.wikidata.org/entity/Q899138>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass fraction" .
+    a iop:Property ;
+    rdfs:label "mass fraction" .
 
 <http://vocab.nerc.ac.uk/collection/S27/current/CS003625/>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "endosulfane sulfate" .
+    a iop:Entity ;
+    rdfs:label "endosulfane sulfate" .
 
 <https://www.wikidata.org/entity/Q13119823>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "flesh" .
+    a iop:Entity ;
+    rdfs:label "flesh" .

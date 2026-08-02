@@ -3,44 +3,36 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
 
 ex:densvar
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "density of benzene" ;
-    skos:definition 
-        """mass density of a 10.00 mL sample of ACS reagent grade (99.0 (v/v)) benzene at a room temperature""" ;
-    rdfs:comment 
-        """mass density; 10.00 mL sample; ACS reagent grade (99.0 (v/v)); benzene; at a room temperature""" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/85" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q2270> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q29539> ;
+    a iop:Variable ;
+    rdfs:label "density of benzene" ;
+    skos:definition "mass density of a 10.00 mL sample of ACS reagent grade (99.0 % v/v) benzene at a room temperature" ;
+    rdfs:comment "mass density; 10.00 mL sample; ACS reagent grade (99.0 % v/v); benzene; at a room temperature" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/85" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q2270> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q29539> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: at room temperature" ;
-             iop:constrains <https://www.wikidata.org/entity/Q29539> ;
+            rdfs:isDefinedBy "condition" ;
+            rdfs:label "at room temperature" ;
+            iop:constrains <https://www.wikidata.org/entity/Q29539> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "size: 10.00 mL sample" ;
-             iop:constrains <https://www.wikidata.org/entity/Q2270> ;
+            rdfs:isDefinedBy "extent" ;
+            rdfs:label "volume of 10.00 mL" ;
+            iop:constrains <https://www.wikidata.org/entity/Q2270> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "quality: ACS reagent grade (99.0 (v/v))" ;
-             iop:constrains <https://www.wikidata.org/entity/Q2270> ;
+            rdfs:isDefinedBy "quality" ;
+            rdfs:label "ACS reagent grade (99.0 (v/v))" ;
+            iop:constrains <https://www.wikidata.org/entity/Q2270> ;
         ] .
 
 <https://www.wikidata.org/entity/Q2270>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "benzene (C6H6)" .
+    a iop:Entity ;
+    rdfs:label "benzene (C6H6)" .
 
 <https://www.wikidata.org/entity/Q29539>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass density" .
+    a iop:Property ;
+    rdfs:label "mass density" .

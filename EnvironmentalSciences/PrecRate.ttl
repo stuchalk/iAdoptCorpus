@@ -4,73 +4,56 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/iadopt/Env/PrecRate>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Daily maximum hourly precipitation rate" ;
+ex:PrecRate
+    a iop:Variable ;
+    rdfs:label "Daily maximum hourly precipitation rate" ;
     skos:definition "Daily maximum hourly precipitation rate, measured in kg m⁻² s⁻¹";
     rdfs:comment "frequency: hourly, frequency: daily, ground, atmosphere, mass flux, maximum, vegetation-soil system, water, ADD: origin: precipitation" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/124";
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q283> ;
-    iop:hasMatrix 
-        ex:Matrix ;
-    iop:hasStatisticalModifier 
-        <https://www.wikidata.org/entity/Q10578722> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q3265048> ;
+    rdfs:comment "SJC: I think that the 'hourly' attribute is a 'normalization' constraint, not a 'reporting frequency', Property should thus be 'surface density' ('areal mass denisty')**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/124";
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q283> ;
+    iop:hasMatrix iop:AsymmetricSystem ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q10578722> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q1907514> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "reporting frequency: daily" ;
-             iop:constrains <https://www.wikidata.org/entity/Q10578722> ;
+            rdfs:isDefinedBy "reporting frequency" ;
+            rdfs:label ": daily" ;
+            iop:constrains <https://www.wikidata.org/entity/Q10578722> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "reporting frequency: hourly" ;
-             iop:constrains <https://www.wikidata.org/entity/Q10578722> ;
+            rdfs:isDefinedBy "normalization" ;
+            rdfs:label "hourly" ;
+            iop:constrains <https://www.wikidata.org/entity/Q10578722> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "origin: precipitation" ;
-             iop:constrains <https://www.wikidata.org/entity/Q283> ;
+            rdfs:isDefinedBy "process" ;
+            rdfs:label "precipitation" ;
+            iop:constrains <https://www.wikidata.org/entity/Q283> ;
         ] .
 
 <https://www.wikidata.org/entity/Q283>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water" .
+    a iop:Entity ;
+    rdfs:label "water" .
 
-ex:Matrix
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    rdfs:label 
-        "vegetation-soil system" ;
-    iop:hasTarget 
-        <https://www.wikidata.org/entity/Q36133> ;
-    iop:hasSource 
-        <https://www.wikidata.org/entity/Q8104> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    rdfs:label "vegetation-soil system" ;
+    iop:hasTarget <https://www.wikidata.org/entity/Q36133> ;
+    iop:hasSource <https://www.wikidata.org/entity/Q8104> .
 
 <https://www.wikidata.org/entity/Q10578722>
-    a 
-        iop:StatisticalModifier ;
-    rdfs:label 
-        "maximum" .
+    a iop:StatisticalModifier ;
+    rdfs:label "maximum" .
 
-<https://www.wikidata.org/entity/Q3265048>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass flux" .
+<https://www.wikidata.org/wiki/Q1907514>
+    a iop:Property ;
+    rdfs:label "surface density" .
 
 <https://www.wikidata.org/entity/Q36133>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "ground" .
+    a iop:Entity ;
+    rdfs:label "ground" .
 
 <https://www.wikidata.org/entity/Q8104>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "atmosphere" .
+    a iop:Entity ;
+    rdfs:label "atmosphere" .

@@ -10,7 +10,7 @@ ex:IceWater
     skos:definition "mass concentration of ice in atmosphere measured in g/m3" ;
     rdfs:comment "g/m3-> mass concentration, ice -> water, state:solid, atmosphere" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/100" ;
-    iop:hasObjectOfInterest iop:System ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/entity/Q589446> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
@@ -19,8 +19,8 @@ ex:IceWater
             iop:constrains <https://www.wikidata.org/entity/Q283> ;
         ] .
 
-iop:System
-    a iop:Entity, iop:AsymmetricSystem ;
+iop:AsymmetricSystem
+    a iop:Entity ;
     iop:hasNumerator <https://www.wikidata.org/entity/Q283> ;
     iop:hasDenominator <https://www.wikidata.org/entity/Q8104> .
 

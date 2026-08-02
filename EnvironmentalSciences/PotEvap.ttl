@@ -4,59 +4,44 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/EnvScience/PotEvap>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Potential evaporation" ;
-    skos:definition "Potential evaporation l m⁻² s⁻¹";
+ex:PotEvap
+    a iop:Variable ;
+    rdfs:label "Potential evaporation" ;
+    skos:definition "Potential evaporation L m⁻² s⁻¹";
     rdfs:comment "condition: evaporated, condition: at non-limiting water supply, soil, volume flux, flow, water, atmosphere" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/125";
-    iop:hasObjectOfInterest 
-        ex:OoI ;
-    iop:hasMatrix 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q55753416> ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/125";
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q283> ;
+    iop:hasMatrix iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q55753416> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: at non-limiting water supply" ;
-             iop:constrains ex:OoI ;
+            rdfs:isDefinedBy "condition" ;
+            rdfs:label "non-limiting water supply" ;
+            iop:constrains <https://www.wikidata.org/entity/Q283> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "condition: evaporated" ;
-             iop:constrains ex:OoI ;
+            rdfs:isDefinedBy "process" ;
+            rdfs:label "evaporation" ;
+            iop:constrains <https://www.wikidata.org/entity/Q283> ;
         ] .
 
-ex:OoI
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water" .
+<https://www.wikidata.org/entity/Q283>
+    a iop:Entity ;
+    rdfs:label "water" .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasSource 
-        <https://www.wikidata.org/entity/Q36133> ;
-    iop:hasTarget 
-        <https://www.wikidata.org/entity/Q8104> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasSource <https://www.wikidata.org/entity/Q36133> ;
+    iop:hasTarget <https://www.wikidata.org/entity/Q8104> .
 
 <https://www.wikidata.org/entity/Q55753416>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "volume flux" .
+    a iop:Property ;
+    rdfs:label "volume flux" .
 
 <https://www.wikidata.org/entity/Q36133>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "soil" .
+    a iop:Entity ;
+    rdfs:label "soil" .
 
 <https://www.wikidata.org/entity/Q8104>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "atmosphere" .
+    a iop:Entity ;
+    rdfs:label "atmosphere" .

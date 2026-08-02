@@ -3,37 +3,26 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
 
-<http://example.org/iadopt/env/WatSamDepth>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Water sampling depth " ;
+ex:WatSamDepth
+    a iop:Variable ;
+    rdfs:label "Water sampling depth " ;
     skos:definition "Water sampling depth (the distance from the top/surface to the bottom) from which the water was sampled";
     rdfs:comment "datum: distance from the surface to the bottom, water sampling, depth";
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/120";
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q30032096> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q930412> ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/120";
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q30032096> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q930412> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "datum: distance from the surface to the bottom" ;
-             iop:constrains <https://www.wikidata.org/entity/Q930412> ;
+            rdfs:isDefinedBy "reference" ;
+            rdfs:label "from surface to bottom" ;
+            iop:constrains <https://www.wikidata.org/entity/Q930412> ;
         ] .
 
 <https://www.wikidata.org/entity/Q30032096>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water sampling" .
+    a iop:Entity ;
+    rdfs:label "water sampling" .
 
 <https://www.wikidata.org/entity/Q930412>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "depth" .
+    a iop:Property ;
+    rdfs:label "depth" .

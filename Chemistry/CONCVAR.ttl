@@ -5,41 +5,27 @@
 @prefix ex: <http://example.org/iadopt/> .
 
 ex:someVar
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Determination of iron concentration in a soil sample" ;
-    rdfs:comment 
-        """Determination of iron concentration in a soil sample by colorimetric analysis using ortho-phenanthroline as mass fraction""" ;
-ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/80" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q899138> .
+    a iop:Variable ;
+    rdfs:label "Determination of the iron concentration in a soil sample" ;
+    rdfs:comment "Determination of the iron concentration in a soil sample by colorimetric analysis using ortho-phenanthroline as mass fraction" ;
+    rdfs:comment "SJC; the OOI should be iron not iron(II)" ;
+    skos:related  "https://github.com/mabablue/I-ADOPT-examples-playground/issues/80" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q899138> .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q428946> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q36133> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q428946> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q36133> .
 
 <https://www.wikidata.org/entity/Q899138>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass fraction" .
+    a iop:Property ;
+    rdfs:label "mass fraction" .
 
 <https://www.wikidata.org/entity/Q428946>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "iron (II)" .
+    a iop:Entity ;
+    rdfs:label "iron" .
 
 <https://www.wikidata.org/entity/Q36133>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "soil" .
+    a iop:Entity ;
+    rdfs:label "soil" .

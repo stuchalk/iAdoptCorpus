@@ -3,59 +3,45 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
 
 ex:slvar
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "solubility of naphthalene in water at room temperature" ;
-    skos:definition 
-        """solubility measurement of napathalene in deionized water at room temperature by monitoring absorption at 279 nm, measured in mg/L""" ;
-    rdfs:comment 
-        """napathalene; deionized; water; at room temperature; ADD: state:dissolved, quality: deionized""" ;
-  ex:issue "https://github.com/mabablue/I-ADOPT-Variables/blob/d1f1a3b56a1ad46698260397e6fa66ef206ec7d3/Chemistry/SLVAR.ttl" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q589446> ;
+    a iop:Variable ;
+    rdfs:label "solubility of naphthalene in water at room temperature" ;
+    skos:definition "solubility measurement of naphthalene in deionized water at room temperature by monitoring absorption at 279 nm, measured in mg/L" ;
+    rdfs:comment "naphthalene; deionized; water; at room temperature; ADD: state:dissolved, quality: deionized" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/84" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q589446> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: at room temperature" ;
-             iop:constrains <https://www.wikidata.org/entity/Q589446> ;
+            rdfs:isDefinedBy "condition" ;
+            rdfs:label "at room temperature" ;
+            iop:constrains <https://www.wikidata.org/entity/Q589446> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "state: dissolved" ;
-             iop:constrains <https://www.wikidata.org/entity/Q179724> ;
+            rdfs:isDefinedBy "state" ;
+            rdfs:label "dissolved" ;
+            iop:constrains <https://www.wikidata.org/entity/Q179724> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "quality: deionized" ;
-             iop:constrains <https://www.wikidata.org/entity/Q283> ;
+            rdfs:isDefinedBy "purity" ;
+            rdfs:label "deionized" ;
+            iop:constrains <https://www.wikidata.org/entity/Q283> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q179724> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q283> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q179724> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q283> .
 
 <https://www.wikidata.org/entity/Q589446>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass concentration" .
+    a iop:Property ;
+    rdfs:label "mass concentration" .
 
 <https://www.wikidata.org/entity/Q179724>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "naphthalene (C10H8)" .
+    a iop:Entity ;
+    rdfs:label "naphthalene (C10H8)" .
 
 <https://www.wikidata.org/entity/Q283>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water" .
+    a iop:Entity ;
+    rdfs:label "water" .

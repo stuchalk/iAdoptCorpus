@@ -4,43 +4,20 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-
-<http://example.org/Clinical/BMI>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Body Mass Index" ;
-    skos:definition 
-        """Body mass index calculated by dividing body mass by height squared""" ;
-    rdfs:comment
-    """Body mass; index; defined by: body mass divided by height squared; ADD: person""" ;
- ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/107" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q620876> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q5> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q25472932> ;
-    iop:hasConstraint 
-        [ a iop:Constraint ;
-             rdfs:label "defined by: body mass divided by height squared" ;
-             iop:constrains <https://www.wikidata.org/entity/Q25472932> ;
-        ] .
-
-<https://www.wikidata.org/entity/Q620876>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "body mass" .
+ex:BMI
+    a iop:Variable ;
+    rdfs:label "Body Mass Index" ;
+    skos:definition "Body mass index calculated by dividing body mass by height squared" ;
+    rdfs:comment "Body mass; index; defined by: body mass divided by height squared; ADD: person" ;
+    rdfs:comment "SJC: this is a derived health metric; the property is BMI and is derived by making separate weight and height measurement" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/107" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q5> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q131191> .
 
 <https://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
-<https://www.wikidata.org/entity/Q25472932>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "index" .
+<https://www.wikidata.org/wiki/Q131191>
+    a iop:Property ;
+    rdfs:label "body mass index" .
