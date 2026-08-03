@@ -11,30 +11,28 @@ ex:GDOP
     rdfs:comment "Geometric dilution of precision of the relative position, based on the position of the receiver and the transmitters." ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/44" ;
     iop:hasObjectOfInterest iop:SymmetricSystem ;
-    iop:hasProperty <https://www.wikidata.org/entity/Q616896> .
+    iop:hasProperty <https://www.wikidata.org/entity/Q616896> ;
     iop:hasConstraint
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "type" ;
-            rdfs:label "transmitter" ;
+            rdfs:isDefinedBy "position" ;
+            rdfs:label "relative" ;
             iop:constrains <https://qudt.org/vocab/quantitykind/LinearVelocity> ;
         ] .
 
 iop:SymmetricSystem
     a iop:Entity ;
     iop:hasPart 
-        _:b1 ,
-        _:b2 .
+        <https://www.wikidata.org/wiki/Q190157> ,
+        <https://www.wikidata.org/wiki/Q159391> .
 
 <https://www.wikidata.org/entity/Q616896>
     a iop:Property ;
     rdfs:label "dilution of precision" .
 
-<https://www.wikidata.org/wiki/Q17334923>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "position of receiver" .
-
-<https://www.wikidata.org/wiki/Q17334923>
+<https://www.wikidata.org/wiki/Q159391>
     a iop:Entity ;
-    rdfs:label "position" .
+    rdfs:label "receiver" .
+
+<https://www.wikidata.org/wiki/Q190157>
+    a iop:Entity ;
+    rdfs:label "transmitter" .

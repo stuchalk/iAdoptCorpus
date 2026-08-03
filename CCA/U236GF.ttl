@@ -9,7 +9,7 @@ ex:U236GF
     rdfs:label "Global fallout of U‑236 (U236GF)" ;
     skos:definition "Global fallout of U‑236 (U236GF) in atoms kg-1" ;
     rdfs:comment "Global fallout of U‑236 (U236GF) in atoms kg-1" ;
-    rdfs:comment "SJC: change property to number density per unit mass**" ;
+    rdfs:comment "SJC: change property to 'number density per unit mass'**" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/130" ;
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/wiki/Q139568528> ;
