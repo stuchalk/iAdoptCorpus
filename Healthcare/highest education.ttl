@@ -3,36 +3,29 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 
-<http://example.org/iadopt/healthcare/highesteducation>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Level of highest education" ;
-    rdfs:comment 
-        """level of highest education""" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q5> ;
-    iop:hasProperty 
-        _:b0 ;
+ex:highesteducation
+    a iop:Variable ;
+    rdfs:label "Level of highest education" ;
+    rdfs:comment "level of highest education" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q5> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q18189> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: highest" ;
-             iop:constrains _:b0 ;
-        ] .
+            rdfs:isDefinedBy "criteria" ;
+            rdfs:label "highest" ;
+            iop:constrains <https://www.wikidata.org/wiki/Q18189> ;
+        ],
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "role" ;
+            rdfs:label "patient" ;
+            iop:constrains <https://www.wikidata.org/entity/Q5> ;
+        ].
 
 <https://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
-_:b0
-    a 
-        iop:Property ;
-    rdfs:label 
-        "level of education" .
+<https://www.wikidata.org/wiki/Q18189>
+    a iop:Property ;
+    rdfs:label "educational stage" .

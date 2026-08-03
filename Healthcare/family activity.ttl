@@ -3,52 +3,35 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 
-<http://example.org/iadopt/healthcare/familyactivity>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Number of Hours of family activity per week" ;
-    rdfs:comment 
-        """Number of Hours of family activity per week""" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q61788146> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q5> ;
-    iop:hasStatisticalModifier 
-        <https://www.wikidata.org/entity/Q2796622> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q11471> ;
+ex:familyactivity
+    a iop:Variable ;
+    rdfs:label "Number of Hours of family activity per week" ;
+    rdfs:comment "Number of Hours of family activity per week" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/110" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q61788146> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q5> ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q2796622> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q11471> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "normalization: week" ;
-             iop:constrains <https://www.wikidata.org/entity/Q11471> ;
+            rdfs:isDefinedBy "normalization" ;
+            rdfs:label "week" ;
+            iop:constrains <https://www.wikidata.org/entity/Q11471> ;
         ] .
 
 <https://www.wikidata.org/entity/Q61788146>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "family activity" .
+    a iop:Entity ;
+    rdfs:label "family activity" .
 
 <https://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q2796622>
-    a 
-        iop:StatisticalModifier ;
-    rdfs:label 
-        "mean" .
+    a iop:StatisticalModifier ;
+    rdfs:label "mean" .
 
 <https://www.wikidata.org/entity/Q11471>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "time" .
+    a iop:Property ;
+    rdfs:label "time" .

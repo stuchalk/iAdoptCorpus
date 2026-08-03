@@ -4,50 +4,33 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/HB/DehpNail>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Mass ratio of dehp in nail" ;
+ex:DehpNail
+    a iop:Variable ;
+    rdfs:label "Mass ratio of dehp in nail" ;
     skos:definition "Mass ratio of dehp in nail";
     rdfs:comment "nail, diethylhexyl phthalate, mass ratio, person" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/126";
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q5> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q1563068> .
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/126" ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q5> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q1563068> .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q418492> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q36864> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q418492> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q36864> .
 
 <https://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q1563068>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "mass ratio" .
+    a iop:Property ;
+    rdfs:label "mass ratio" .
 
 <https://www.wikidata.org/entity/Q418492>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "diethylhexyl phthalate " .
+    a iop:Entity ;
+    rdfs:label "diethylhexyl phthalate" .
 
 <https://www.wikidata.org/entity/Q36864>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "nail" .
+    a iop:Entity ;
+    rdfs:label "nail" .

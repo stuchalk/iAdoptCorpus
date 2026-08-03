@@ -4,55 +4,45 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
 
-<http://example.org/HB/BPFOS>
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Percentage Branched Perfluorooctane sulfonic acid (BPFOS)" ;
+ex::BPFOS
+    a iop:Variable ;
+    rdfs:label "Percentage Branched Perfluorooctane sulfonic acid (BPFOS)" ;
     skos:definition "Percentage Branched Perfluorooctane sulfonic acid in blood";
     rdfs:comment "condition: branched isomers, blood, Perfluorooctane sulfonic acid, percentage, person" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/129";
-    iop:hasObjectOfInterest 
-        _:b0 ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q5> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q1907514> ;
+    rdfs:comment "SJC: add 'normalization' to 'percentage' as it is based on the total PFOS concentration in blood (see 10.1021/acs.est.2c04501)" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/129";
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q5> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q1907514> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "condition: branched isomers" ;
-             iop:constrains <https://www.wikidata.org/entity/Q902094> ;
+            rdfs:isDefinedBy "class" ;
+            rdfs:label "branched isomers" ;
+            iop:constrains <https://www.wikidata.org/entity/Q902094> ;
+        ],
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "normalization" ;
+            rdfs:label "total blood PFOS concentration" ;
+            iop:constrains <https://www.wikidata.org/entity/Q1907514> ;
         ] .
 
-_:b0
-    a 
-        iop:Entity ,
-        iop:AsymmetricSystem ;
-    iop:hasNumerator 
-        <https://www.wikidata.org/entity/Q902094> ;
-    iop:hasDenominator 
-        <https://www.wikidata.org/entity/Q7873> .
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q902094> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q7873> .
 
 <https://www.wikidata.org/entity/Q5>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "person" .
+    a iop:Entity ;
+    rdfs:label "person" .
 
 <https://www.wikidata.org/entity/Q1907514>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "percentage" .
+    a iop:Property ;
+    rdfs:label "percentage" .
 
 <https://www.wikidata.org/entity/Q902094>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "Perfluorooctane sulfonic acid" .
+    a iop:Entity ;
+    rdfs:label "Perfluorooctane sulfonic acid" .
 
 <https://www.wikidata.org/entity/Q7873>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "blood" .
+    a iop:Entity ;
+    rdfs:label "blood" .

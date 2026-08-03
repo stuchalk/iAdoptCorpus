@@ -3,76 +3,57 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
 
-ex:someVar
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "ESPC Radial velocity (away from) standard deviation over the scatter patch of water current relative to instrument in the water body by high frequency radar" ;
-    skos:definition
-        """Standard deviation of the component of water velocity in a water body along radial lines centered at the HFR antenna, evaluated over the scatter patch""" ;
+ex:EPSC
+    a iop:Variable ;
+    rdfs:label "ESPC Radial velocity (away from) standard deviation over the scatter patch of water current relative to instrument in the water body by high frequency radar" ;
+    skos:definition "Standard deviation of the component of water velocity in a water body along radial lines centered at the HFR antenna, evaluated over the scatter patch" ;
     rdfs:comment "water current; water body; at the surface; standard deviation; over the scatter patch; sea; velocity; radial; positive away from the instrument; relative to the instrument" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/67" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q5195029> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q15324> ;
-    iop:hasContextObject 
-        <https://www.wikidata.org/entity/Q165> ;
-    iop:hasStatisticalModifier 
-        <https://www.wikidata.org/entity/Q159375> ;
-    iop:hasProperty 
-        <https://www.wikidata.org/entity/Q11465> ;
+    rdfs:comment "SJC: 'radial velocity' as property; this should be split into two variables" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/67" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q5195029> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q15324> ;
+    iop:hasContextObject <https://www.wikidata.org/entity/Q165> ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q159375> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q11465> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "location: at the surface" ;
-             iop:constrains <https://www.wikidata.org/entity/Q15324> ;
+            rdfs:isDefinedBy "part" ;
+            rdfs:label "surface" ;
+            iop:constrains <https://www.wikidata.org/entity/Q15324> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "spatial distribution: over the scatter patch" ;
-             iop:constrains <https://www.wikidata.org/entity/Q159375> ;
+            rdfs:isDefinedBy "spatial extent" ;
+            rdfs:label "over the scatter patch" ;
+            iop:constrains <https://www.wikidata.org/entity/Q159375> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "type: radial" ;
-             iop:constrains <https://www.wikidata.org/entity/Q11465> ;
+            rdfs:isDefinedBy "normalization" ;
+            rdfs:label "positive away from the instrument" ;
+            iop:constrains <https://www.wikidata.org/entity/Q11465> ;
         ] ,
         [ a iop:Constraint ;
-             rdfs:label "sign meaning: positive away from the instrument" ;
-             iop:constrains <https://www.wikidata.org/entity/Q11465> ;
-        ] ,
-        [ a iop:Constraint ;
-             rdfs:label "datum: relative to instrument" ;
-             iop:constrains <https://www.wikidata.org/entity/Q11465> ;
+            rdfs:isDefinedBy "reference" ;
+            rdfs:label "relative to instrument" ;
+            iop:constrains <https://www.wikidata.org/entity/Q11465> ;
         ] .
 
 <https://www.wikidata.org/entity/Q5195029>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water current" .
+    a iop:Entity ;
+    rdfs:label "water current" .
 
 <https://www.wikidata.org/entity/Q15324>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "water body" .
+    a iop:Entity ;
+    rdfs:label "water body" .
 
 <https://www.wikidata.org/entity/Q159375>
-    a 
-        iop:StatisticalModifier ;
-    rdfs:label 
-        "standard deviation" .
+    a iop:StatisticalModifier ;
+    rdfs:label "standard deviation" .
 
-<https://www.wikidata.org/entity/Q11465>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "Velocity" .
+<https://www.wikidata.org/wiki/Q240105>
+    a iop:Property ;
+    rdfs:label "radial velocity" .
 
 <https://www.wikidata.org/entity/Q165>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "sea" .
+    a iop:Entity ;
+    rdfs:label "sea" .
