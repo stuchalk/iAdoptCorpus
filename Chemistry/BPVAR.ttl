@@ -8,6 +8,7 @@ ex:bpvar
     a iop:Variable ;
     rdfs:label "boiling point of benzene" ;
     rdfs:comment "thermodynamic temperature for the boiling point of a known purity 99.07% (w/w) liquid sample of benzene at atmospheric pressure" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/78" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q2270> ;
     iop:hasProperty <https://www.wikidata.org/entity/Q264647> ;
     iop:hasConstraint 

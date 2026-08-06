@@ -6,9 +6,10 @@
 
 ex:NumberPers
     a iop:Variable ;
-    rdfs:label "Total Number of people living in a statistical unit" ;
+    rdfs:label "Total number of people living in a statistical unit" ;
     rdfs:comment "total number of people living within a statistical unit which is defined as a grouping of homogeneous neighboring building blocks" ;
     rdfs:comment "SJC: changed property to count**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/95" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q22947> ;
     iop:hasMatrix <https://www.wikidata.org/entity/Q3409269> ;
     iop:hasProperty <https://qudt.org/vocab/quantitykind/Count> ;

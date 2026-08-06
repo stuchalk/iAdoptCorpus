@@ -8,6 +8,7 @@ ex:C9
     a iop:Variable ;
     rdfs:label "Foliage projective cover in the lower canopy strata" ;
     rdfs:comment "The proportion (percentage) of the ground area covered by foliage (or photosynthetic tissue) in the lower canopy strata." ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/15" ;
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction> ;
     iop:hasConstraint 

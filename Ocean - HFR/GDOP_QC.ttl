@@ -2,36 +2,28 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt/HFR> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-
+@prefix ex: <http://example.org/iadopt/> .
 
 ex:Variable
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "GDOP threshold quality flag " ;
-    rdfs:comment 
-        """QC flags resulting from setting a threshold on GDOP. Setting a threshold on GDOP for total combination avoids the combination of radials with an intersection angle below a certain value.""" ;
-    ex:issue "https://github.com/mabablue/I-ADOPT-examples-playground/issues/50" ;  
+    a iop:Variable ;
+    rdfs:label "GDOP threshold quality flag" ;
+    rdfs:comment "QC flags resulting from setting a threshold on GDOP. Setting a threshold on GDOP for total combination avoids the combination of radials with an intersection angle below a certain value." ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/50" ;
     iop:hasObjectOfInterest 
         <https://www.wikidata.org/entity/Q616896> ;
     iop:hasProperty 
         <https://www.wikidata.org/entity/Q137642315> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-             rdfs:label "threshold: good if under the threshold value" ;
+             rdfs:isDefinedBy "reference" ;
+          rdfs:label "under threshold value" ;
              iop:constrains <https://www.wikidata.org/entity/Q137642315> ;
         ] .
 
 <https://www.wikidata.org/entity/Q616896>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "GDOP" .
+    a iop:Entity ;
+    rdfs:label "GDOP" .
 
 <https://www.wikidata.org/entity/Q137642315>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "quality flag" .
+    a iop:Property ;
+    rdfs:label "quality flag" .

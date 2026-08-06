@@ -10,6 +10,7 @@ ex:C17
     rdfs:label "Docosahexaenoic acid content per dry weight (DHA content/ C22:6 n-3 content)" ;
     rdfs:comment "The amount of docosahexaenoic acid relative to dry weight in an organism." ;
     rdfs:comment "SJC: changed property to mass fraction**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/23" ;
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/wiki/Q899138> ;
     iop:hasConstraint 

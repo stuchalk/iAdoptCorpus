@@ -8,6 +8,7 @@ ex:highesteducation
     a iop:Variable ;
     rdfs:label "Level of highest education" ;
     rdfs:comment "level of highest education" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/111" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q5> ;
     iop:hasProperty <https://www.wikidata.org/wiki/Q18189> ;
     iop:hasConstraint 

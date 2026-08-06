@@ -3,33 +3,22 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/iadopt/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
-@prefix patt: <http://example.org/iadopt/pattern> .
 
-ex:
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Northward velocity uncertainty of water current in the water body by high frequency radar" ;
-    skos:definition 
-        """Uncertainty of the northward component of water velocity in a water body.""" ;
-    rdfs:comment
-        "northward component of water velocity in a water body; confidence interval" ;
-    ex:issue
-        "https://github.com/mabablue/I-ADOPT-examples-playground/issues/43" ;
-    iop:hasObjectOfInterest 
-        _:b0 ;
+ex:vacc
+    a iop:Variable ;
+    rdfs:label "Northward velocity uncertainty of water current in the water body by high frequency radar" ;
+    skos:definition """Uncertainty of the northward component of water velocity in a water body.""" ;
+    rdfs:comment "northward component of water velocity in a water body; confidence interval" ;
+    rdfs:comment "SJC: links to another variable for the water current velocity**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/43" ;
+    iop:hasObjectOfInterest ex:vaccvar ;
     iop:hasProperty 
         <https://www.wikidata.org/entity/Q208498> .
 
-_:b0
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "NSCT - Northward velocity of water current in the water body by high frequency radar" .
+ex:vaccvar
+    a iop:Entity ;
+    rdfs:label "Northward velocity of water current in the water body by high frequency radar" .
 
 <https://www.wikidata.org/entity/Q208498>
-    a 
-        iop:Property ;
-    rdfs:label 
-        "confidence interval" .
+    a iop:Property ;
+    rdfs:label "confidence interval" .

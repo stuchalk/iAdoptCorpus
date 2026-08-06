@@ -9,6 +9,7 @@ ex:NoHighSchool
     rdfs:label "Average number of persons without high school diploma during the last three years within a statistical unit" ;
     rdfs:comment "Average number of persons without a high school diploma during the last three years in a statistical unit, defined as a grouping of homogeneous neighboring building blocks" ;
     rdfs:comment "SJC: separated educational level and timeframe in constraints**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/94" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q215627> ;
     iop:hasMatrix <https://www.wikidata.org/entity/Q3409269> ;
     iop:hasStatisticalModifier <https://www.wikidata.org/wiki/Q19033> ;

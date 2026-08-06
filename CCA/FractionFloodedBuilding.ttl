@@ -8,6 +8,7 @@ ex:FractionFloodedBuilding
     a iop:Variable ;
     rdfs:label "Fraction of flooded area around building" ;
     rdfs:comment "Fraction of flooded area above 30 cm water level within a 5 m buffer around an affected building" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/90" ;
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction> ;
     iop:hasConstraint 

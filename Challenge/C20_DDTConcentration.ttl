@@ -9,6 +9,7 @@ ex:C20
     rdfs:label "Concentration of DDT impacted by industry" ;
     rdfs:comment "Concentration of DDT in a given year at a site impacted by industry, measured in ng/g." ;
     rdfs:comment "SJC: property changed to mass fraction**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/26" ;
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/wiki/Q899138> ;
     iop:hasConstraint 
