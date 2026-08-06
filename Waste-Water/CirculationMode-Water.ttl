@@ -2,44 +2,26 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <https://example.org/data/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix uom: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
-@prefix iopp: <https://w3id.org/iadopt/pattern/> .
+@prefix ex: <http://example.org/iadopt/> .
 
 ex:Circulation-Mode-in-Pipe
-    a 
-        iop:Variable ;
-    rdfs:label 
-        "Circulation-Mode-in-Pipe" ;
-    rdfs:comment 
-        """Circulation mode (gravity, forced, ...) of water in canalisation pipe""" ;
-    iop:hasObjectOfInterest 
-        <https://www.wikidata.org/entity/Q283> ;
-    iop:hasMatrix 
-        <https://www.wikidata.org/entity/Q41551> ;
-    iop:hasProperty 
-        _:b0 ;
-    iop:hasConstraint 
-        [ a iop:Constraint ;
-             rdfs:label "type: canalisation" ;
-             iop:constrains <https://www.wikidata.org/entity/Q41551> ;
-        ] .
+    a iop:Variable ;
+    rdfs:label "Circulation-Mode-in-Pipe" ;
+    rdfs:comment "Circulation mode (gravity, forced, ...) of water in canalisation pipe" ;
+    rdfs:comment "SJC: 'canalization pipe' is a 'sewer pipe' so I think the matrix should be more specific than 'pipe'" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/2" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q283> ;
+    iop:hasMatrix <https://www.wikidata.org/wiki/Q336169> ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q140911832>  .
 
 <https://www.wikidata.org/entity/Q283>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "Water" .
+    a iop:Entity ;
+    rdfs:label "Water" .
 
-<https://www.wikidata.org/entity/Q41551>
-    a 
-        iop:Entity ;
-    rdfs:label 
-        "Pipe" .
+<https://www.wikidata.org/wiki/Q336169>
+    a iop:Entity ;
+    rdfs:label "sewer pipe" .
 
-_:b0
-    a 
-        iop:Property ;
-    rdfs:label 
-        "Circulation Mode" .
+<https://www.wikidata.org/wiki/Q140911832>
+    a iop:Property ;
+    rdfs:label "fluid circulation mode" .

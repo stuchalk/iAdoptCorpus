@@ -1,0 +1,43 @@
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/iadopt/> .
+
+ex:C10
+    a iop:Variable ;
+    rdfs:label "Peak ground acceleration" ;
+    skos:definition "Peak acceleration measured on the earth surface when facing seismic events, like earthquakes." ;
+    rdfs:comment "ground, maximum, acceleration, due to: seismic event, surface -> location: surface" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/16" ;
+    iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q36133> ;
+    iop:hasMatrix <https://www.wikidata.org/entity/Q2> ;
+    iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q10578722> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q11376> ;
+    iop:hasConstraint 
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "part" ;
+            rdfs:label "surface" ;
+            iop:constrains <https://www.wikidata.org/entity/Q36133> ;
+        ] ,
+        [ a iop:Constraint ;
+            rdfs:isDefinedBy "event" ;
+            rdfs:label "seismic activity" ;
+            iop:constrains <https://www.wikidata.org/entity/Q11376> ;
+        ] .
+
+<https://www.wikidata.org/entity/Q36133>
+    a iop:Entity ;
+    rdfs:label "ground" .
+
+<https://www.wikidata.org/entity/Q2>
+    a iop:Entity ;
+    rdfs:label "earth" .
+
+<https://www.wikidata.org/entity/Q10578722>
+    a iop:StatisticalModifier ;
+    rdfs:label "maximum" .
+
+<https://www.wikidata.org/entity/Q11376>
+    a iop:Property ;
+    rdfs:label "acceleration" .

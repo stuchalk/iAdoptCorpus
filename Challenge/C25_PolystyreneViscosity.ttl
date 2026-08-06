@@ -8,6 +8,7 @@ ex:C25
     a iop:Variable ;
     rdfs:label "Dynamic shear viscosity of polystyrene PS042" ;
     rdfs:comment "Dynamic shear viscosity of polystyrene PS042 under the testing conditions of DIN 51810-1." ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/31" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/wiki/Q146243> ;
     iop:hasProperty <https://www.wikidata.org/entity/Q15152757> ;
     iop:hasConstraint 

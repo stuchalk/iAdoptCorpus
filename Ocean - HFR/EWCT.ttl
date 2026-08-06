@@ -8,6 +8,7 @@ ex:EWCT
     a iop:Variable ;
     rdfs:label "EWCT Eastward velocity of water current in the water body by high frequency radar" ;
     rdfs:comment "Component of the sea surface current velocity that is directed eastward (positive values) or westward (negative values)" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/37" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q283> ;
     iop:hasContextObject <https://www.wikidata.org/entity/Q165> ;
     iop:hasProperty <https://qudt.org/vocab/quantitykind/LinearVelocity> ;

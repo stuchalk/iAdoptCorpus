@@ -9,6 +9,7 @@ ex:AOA
     rdfs:label "Aircraft angle of attack." ;
     rdfs:comment "Aircraft angle of attack measured in degrees." ;
     skos:definition "The angle at which a straight line from the leading edge to the training edge of an aircraft’s wing meets the relative wind." ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/104" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q11436> ;
     iop:hasMatrix <https://www.wikidata.org/entity/Q8094> ;
     iop:hasProperty <https://qudt.org/vocab/quantitykind/AngleOfAttack> .

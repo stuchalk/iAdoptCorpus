@@ -9,7 +9,7 @@ ex:someVar
     rdfs:label "Determination of the iron concentration in a soil sample" ;
     rdfs:comment "Determination of the iron concentration in a soil sample by colorimetric analysis using ortho-phenanthroline as mass fraction" ;
     rdfs:comment "SJC; the OOI should be iron not iron(II)" ;
-    skos:related  "https://github.com/mabablue/I-ADOPT-examples-playground/issues/80" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/80" ;
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasProperty <https://www.wikidata.org/entity/Q899138> .
 

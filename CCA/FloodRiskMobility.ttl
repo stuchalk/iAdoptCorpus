@@ -9,6 +9,7 @@ ex:FloodRiskMobility
     rdfs:label "Flood risk index related to mobility and accessibility " ;
     rdfs:comment "Flood risk index related to mobility and accessibility when streets around the houses are flooded" ;
     rdfs:comment "SJC: separated out mobility and accessibility**" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/98" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q2288778> ;
     iop:hasMatrix <https://www.wikidata.org/entity/Q3409269> ;
     iop:hasProperty <https://www.wikidata.org/entity/Q1738991> ;
