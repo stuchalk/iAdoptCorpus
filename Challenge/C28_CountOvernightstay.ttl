@@ -15,12 +15,12 @@ ex:C28
     iop:hasProperty <https://www.wikidata.org/wiki/Q614112> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "relative location" ;
+            rdfs:isDefinedBy "vicinty" ;
             rdfs:label "near the sea shore" ;
             iop:constrains <https://www.wikidata.org/entity/Q27686> ;
         ] ,
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "quality" ;
+            rdfs:isDefinedBy "rating" ;
             rdfs:label "three star" ;
             iop:constrains <https://www.wikidata.org/entity/Q27686> ;
         ] .
