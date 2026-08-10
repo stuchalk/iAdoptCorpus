@@ -24,7 +24,7 @@ ex:ElderlyAlone
             iop:constrains <https://www.wikidata.org/entity/Q215627> ;
         ] ,
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "scope" ;
+            rdfs:isDefinedBy "criterium" ;
             rdfs:label "grouping of homogeneous neighboring building blocks" ;
             iop:constrains <https://www.wikidata.org/entity/Q3409269> ;
         ] .
