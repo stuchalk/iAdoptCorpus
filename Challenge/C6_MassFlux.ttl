@@ -12,7 +12,7 @@ ex:C6
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/12" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q623> ;
     iop:hasMatrix iop:AsymmetricSystem ;
-    iop:hasProperty <http://vocabs.lter-europe.net/EnvThes/30361> ;
+    iop:hasProperty <https://qudt.org/vocab/quantitykind/MassFluxDensity> ;
     iop:hasConstraint
         [ a iop:Constraint ;
             rdfs:isDefinedBy "process" ;
@@ -30,9 +30,9 @@ iop:AsymmetricSystem
     iop:hasSource <http://vocabs.lter-europe.net/EnvThes/20535> ;
     iop:hasTarget <http://vocabs.lter-europe.net/EnvThes/24> .
 
-<http://vocabs.lter-europe.net/EnvThes/30361>
+<https://qudt.org/vocab/quantitykind/MassFluxDensity>
     a iop:Property ;
-    rdfs:label "mass flux" .
+    rdfs:label "mass flux density" .
 
 <http://vocabs.lter-europe.net/EnvThes/20535>
     a iop:Entity ;

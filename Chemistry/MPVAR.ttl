@@ -31,7 +31,7 @@ ex:mpvar
 
 <https://www.wikidata.org/entity/Q179724>
     a iop:Entity ;
-    rdfs:label "naphthalene (C10H8)" .
+    rdfs:label "naphthalene" .
 
 <https://www.wikidata.org/entity/Q264647>
     a iop:Property ;

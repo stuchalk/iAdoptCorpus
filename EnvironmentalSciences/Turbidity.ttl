@@ -11,7 +11,6 @@ ex:Turbidity
     rdfs:comment "state: stagnant, type: surface, turbidity, water body, water" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/132";
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q283> ;
-    iop:hasMatrix <https://www.wikidata.org/entity/Q15324> ;
     iop:hasProperty <https://www.wikidata.org/entity/Q898574> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
@@ -28,10 +27,6 @@ ex:Turbidity
 <https://www.wikidata.org/entity/Q283>
     a iop:Entity ;
     rdfs:label "water" .
-
-<https://www.wikidata.org/entity/Q15324>
-    a iop:Entity ;
-    rdfs:label "water body" .
 
 <https://www.wikidata.org/entity/Q898574>
     a iop:Property ;

@@ -21,7 +21,7 @@ ex:SulfateAerosol
             iop:constrains <https://www.wikidata.org/entity/Q1621273> ;
         ] ,
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "statistic" ;
+            rdfs:isDefinedBy "calculation" ;
             rdfs:label "total" ;
             iop:constrains <https://www.wikidata.org/entity/Q1621273> ;
         ] ,

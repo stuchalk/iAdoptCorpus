@@ -12,7 +12,7 @@ ex:PercentChild
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/96" ;
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasMatrix <https://www.wikidata.org/entity/Q3409269> ;
-    iop:hasProperty <https://www.wikidata.org/wiki/Q7075743> ;
+    iop:hasProperty <https://qudt.org/vocab/quantitykind/Ratio> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
             rdfs:isDefinedBy "scope" ;
@@ -39,9 +39,9 @@ iop:AsymmetricSystem
     a iop:Entity ;
     rdfs:label "statistical unit" .
 
-<https://www.wikidata.org/wiki/Q7075743>
+<https://qudt.org/vocab/quantitykind/Ratio>
     a iop:Property ;
-    rdfs:label "percentage" .
+    rdfs:label "ratio" .
 
 <https://www.wikidata.org/entity/Q215627>
     a iop:Entity ;

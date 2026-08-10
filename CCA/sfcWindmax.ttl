@@ -14,12 +14,12 @@ ex:sfcWindmax
     iop:hasProperty <https://www.wikidata.org/entity/Q3711325> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "location" ;
+            rdfs:isDefinedBy "part" ;
             rdfs:label "near surface" ;
             iop:constrains <https://www.wikidata.org/entity/Q8094> ;
         ] ,
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "transient event" ;
+            rdfs:isDefinedBy "event" ;
             rdfs:label "gust" ;
             iop:constrains <https://www.wikidata.org/entity/Q8094> ;
         ] ,

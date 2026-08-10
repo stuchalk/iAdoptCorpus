@@ -18,7 +18,7 @@ ex:C19
     iop:hasConstraint 
         [ a iop:Constraint ;
             rdfs:isDefinedBy "condition" ;
-            rdfs:label "temperature: 15°C" ;
+            rdfs:label "temperature: 15 °C" ;
             iop:constrains <hhttps://www.wikidata.org/entity/Q3265048> ;
         ] ,
         [ a iop:Constraint ;

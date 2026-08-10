@@ -8,6 +8,7 @@ ex:Variable
     a iop:Variable ;
     rdfs:label "GDOP threshold quality flag" ;
     rdfs:comment "QC flags resulting from setting a threshold on GDOP. Setting a threshold on GDOP for total combination avoids the combination of radials with an intersection angle below a certain value." ;
+    rdfs:comment "SJC: change 'quality flag' to 'quality indicator' (https://www.wikidata.org/wiki/Q60649267)" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/50" ;
     iop:hasObjectOfInterest 
         <https://www.wikidata.org/entity/Q616896> ;

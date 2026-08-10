@@ -12,7 +12,7 @@ ex:RadDown
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/109" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q18335> ;
     iop:hasMatrix iop:AsymmetricSystem ;
-    iop:hasProperty <https://www.wikidata.org/entity/Q5377054> ;
+    iop:hasProperty <https://www.wikidata.org/entity/Q98538612> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
             rdfs:isDefinedBy "spectral region" ;
@@ -39,9 +39,9 @@ iop:AsymmetricSystem
     iop:hasSource <https://www.wikidata.org/entity/Q8104> ;
     iop:hasTarget <https://www.wikidata.org/entity/Q6501125> .
 
-<https://www.wikidata.org/entity/Q5377054>
+<https://www.wikidata.org/entity/Q98538612>
     a iop:Property ;
-    rdfs:label "energy flux" .
+    rdfs:label "energy fluence" .
 
 <https://www.wikidata.org/entity/Q8104>
     a iop:Entity ;

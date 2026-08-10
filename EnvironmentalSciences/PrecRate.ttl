@@ -9,7 +9,7 @@ ex:PrecRate
     rdfs:label "Daily maximum hourly precipitation rate" ;
     skos:definition "Daily maximum hourly precipitation rate, measured in kg m⁻² s⁻¹";
     rdfs:comment "frequency: hourly, frequency: daily, ground, atmosphere, mass flux, maximum, vegetation-soil system, water, ADD: origin: precipitation" ;
-    rdfs:comment "SJC: I think that the 'hourly' attribute is a 'normalization' constraint, not a 'reporting frequency', Property should thus be 'surface density' ('areal mass denisty')**" ;
+    rdfs:comment "SJC: I think that the property should thus be 'mass fluence' not 'surface density'**" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/124";
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q283> ;
     iop:hasMatrix iop:AsymmetricSystem ;

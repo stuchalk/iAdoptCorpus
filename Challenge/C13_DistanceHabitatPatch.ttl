@@ -19,7 +19,7 @@ ex:C13
         [ a iop:Constraint ;
             rdfs:isDefinedBy "condition" ;
             rdfs:label "nearest" ;
-            iop:constrains ex:C13_OoI18_part2 ;
+            iop:constrains ex:sourcepatch ;
         ] ,
         [ a iop:Constraint ;
             rdfs:isDefinedBy "codelist" ;
