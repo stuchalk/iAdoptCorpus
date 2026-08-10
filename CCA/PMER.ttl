@@ -9,7 +9,7 @@ ex:PMER
     rdfs:label "Mean sea level pressure" ;
     skos:definition "Mean sea level pressure expressed in Pa" ;
     rdfs:comment "pressure; location: mean sea level; ADD: atmosphere" ;
-    skos:related  "https://github.com/mabablue/I-ADOPT-examples-playground/issues/115" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/115" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q7391292> ;
     iop:hasContextObject <https://www.wikidata.org/entity/Q8104> ;
     iop:hasProperty <https://www.wikidata.org/entity/Q39552> ;

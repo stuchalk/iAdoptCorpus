@@ -28,7 +28,7 @@ ex:C21
 
 <https://www.wikidata.org/entity/Q5>
     a iop:Entity ;
-    rdfs:label "human" .
+    rdfs:label "person" .
 
 <https://www.wikidata.org/wiki/Q42015775>
     a iop:Property ;

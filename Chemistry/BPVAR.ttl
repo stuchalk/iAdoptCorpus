@@ -19,7 +19,7 @@ ex:bpvar
         ] ,
         [ a iop:Constraint ;
             rdfs:isDefinedBy "condition" ;
-            rdfs:label "pressure of 1 atm" ;
+            rdfs:label "atmospheric pressure" ;
             iop:constrains <https://www.wikidata.org/entity/Q264647> ;
         ] ,
         [ a iop:Constraint ;

@@ -28,7 +28,7 @@ ex:C5
 
 <https://www.wikidata.org/entity/Q1621273>
     a iop:Entity ;
-    rdfs:label "particle" .
+    rdfs:label "particulates" .
 
 <https://www.wikidata.org/entity/Q104541>
     a iop:Entity ;
