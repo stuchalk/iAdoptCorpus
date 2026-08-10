@@ -9,7 +9,7 @@
     rdfs:label "HRV Heart rate variabilty" ;
     skos:definition "HRV - Heart rate variability, Category: ECG metrics, Ontology: BMONT Unit: milliseconds (ms)" ;
     rdfs:comment "contractions; person; ADD: role:patient; variation; time interval; type: heart; interval: n+(n+1)" ;
-    rdfs:comment "SJC: i think that 'variance' should not be included. It has a specific meaning in statistics; use HRV instead" ;
+    rdfs:comment "SJC: I think that 'variance' should not be included. It has a specific meaning in statistics; use HRV instead**" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/106" ;
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q127006> ;
     iop:hasMatrix <https://www.wikidata.org/entity/Q5> ;

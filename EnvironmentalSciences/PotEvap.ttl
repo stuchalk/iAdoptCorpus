@@ -9,6 +9,7 @@ ex:PotEvap
     rdfs:label "Potential evaporation" ;
     skos:definition "Potential evaporation L m⁻² s⁻¹";
     rdfs:comment "condition: evaporated, condition: at non-limiting water supply, soil, volume flux, flow, water, atmosphere" ;
+    rdfs:comment "SCJ: property should be 'volume fluence' akin to 'energy fluence'" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/125";
     iop:hasObjectOfInterest <https://www.wikidata.org/entity/Q283> ;
     iop:hasMatrix iop:AsymmetricSystem ;

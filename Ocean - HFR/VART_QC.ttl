@@ -16,8 +16,8 @@ ex:vartqc
         <https://www.wikidata.org/wiki/Q137642315> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-            rdfs:comment "reference" ;
-            rdfs:label "good if termporal variance is smaller than a maximum variance threshold" ;
+            rdfs:isDefinedBy "threshold" ;
+            rdfs:label "good if temporal variance is smaller than a maximum variance threshold" ;
             iop:constrains <https://www.wikidata.org/wiki/Q137642315> ;
         ] .
 
