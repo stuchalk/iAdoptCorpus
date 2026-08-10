@@ -25,7 +25,7 @@ ex:mpvar
         ] ,
         [ a iop:Constraint ;
             rdfs:isDefinedBy "condition" ;
-            rdfs:label "pressure of 1 atm" ;
+            rdfs:label "atmosperic pressure" ;
             iop:constrains <https://www.wikidata.org/entity/Q264647> ;
         ] .
 
