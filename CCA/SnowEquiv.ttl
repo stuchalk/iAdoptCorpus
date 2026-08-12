@@ -1,0 +1,31 @@
+@prefix iop: <https://w3id.org/iadopt/ont/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/iadopt/> .
+
+ex:SnowEquiv
+    a iop:Variable ;
+    rdfs:label "Snow water equivalent" ;
+    skos:definition "Snow Water Equivalent or Surface Snow Amount is the mass of water per unit area (kg/m²)";
+    rdfs:comment "condition: if the snow melted, snow, water, surface density" ;
+    skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/128";
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
+    iop:hasProperty <https://www.wikidata.org/wiki/Q1907514> .
+
+iop:AsymmetricSystem
+    a iop:Entity ;
+    iop:hasNumerator <https://www.wikidata.org/entity/Q283> ;
+    iop:hasDenominator <https://www.wikidata.org/entity/Q7561> .
+
+<https://www.wikidata.org/wiki/Q1907514>
+    a iop:Property ;
+    rdfs:label "surface density" .
+
+<https://www.wikidata.org/entity/Q283>
+    a iop:Entity ;
+    rdfs:label "water" .
+
+<https://www.wikidata.org/entity/Q7561>
+    a iop:Entity ;
+    rdfs:label "snow" .
