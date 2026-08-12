@@ -2,8 +2,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/iadopt
-        /> .
+@prefix ex: <http://example.org/iadopt/> .
 
 ex:C12
     a iop:Variable ;
@@ -16,7 +15,7 @@ ex:C12
     iop:hasProperty <https://lod.nal.usda.gov/nalt/137027> ;
     iop:hasConstraint 
         [ a iop:Constraint ;
-            rdfs:isDefinedBy "reference" ;
+            rdfs:isDefinedBy "temporal extent" ;
             rdfs:label "time: 1 year" ;
             iop:constrains <https://lod.nal.usda.gov/nalt/137027> ;
         ] ,
@@ -33,7 +32,7 @@ ex:C12
         [ a iop:Constraint ;
             rdfs:isDefinedBy "region" ;
             rdfs:label "European Union" ;
-            iop:constrains <https://www.wikidata.org/entity/Q52105> ;
+            iop:constrains <https://www.wikidata.org/entity/Q941769> ;
         ].
 
 <https://www.wikidata.org/entity/Q52105>
@@ -42,7 +41,7 @@ ex:C12
 
 <https://www.wikidata.org/entity/Q941769>
     a iop:Entity ;
-    rdfs:label "land area" .
+    rdfs:label "land" .
 
 <https://lod.nal.usda.gov/nalt/137027>
     a iop:Property ;

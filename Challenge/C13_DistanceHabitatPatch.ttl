@@ -11,7 +11,7 @@ ex:C13
     rdf:subject "https://github.com/EuropaBON/EBV-Descriptions/entity/Terrestrial-Connectivity-of-terrestrial-ecosystem-habitat-types" ;
     rdfs:comment "habitat patch system, distance, habitat patch, habitat patch, nearest neighbour -> location: nearest neighbour, ADD: type: specfic EUNIS habitat, landscape region, minimum" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/19" ;
-    iop:hasObjectOfInterest ex:AsymmetricSystem ;
+    iop:hasObjectOfInterest iop:AsymmetricSystem ;
     iop:hasMatrix <https://www.wikidata.org/entity/Q25496956> ;
     iop:hasStatisticalModifier <https://www.wikidata.org/entity/Q10585806> ;
     iop:hasProperty <https://www.wikidata.org/entity/Q126017> ;
@@ -27,13 +27,11 @@ ex:C13
             iop:constrains ex:AsymmetricSystem ;
         ] .
 
-ex:AsymmetricSystem
+iop:AsymmetricSystem
     a iop:Entity ;
     rdfs:label "habitat patch system" ;
-    iop:hasSource 
-        ex:sourcepatch;
-    iop:hasTarget 
-        ex:targetpatch .
+    iop:hasSource ex:sourcepatch;
+    iop:hasTarget ex:targetpatch .
 
 <https://www.wikidata.org/entity/Q25496956>
     a iop:Entity ;

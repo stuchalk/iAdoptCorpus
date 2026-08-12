@@ -11,13 +11,7 @@ ex:SnowEquiv
     rdfs:comment "condition: if the snow melted, snow, water, surface density" ;
     skos:related "https://github.com/mabablue/I-ADOPT-examples-playground/issues/128";
     iop:hasObjectOfInterest iop:AsymmetricSystem ;
-    iop:hasProperty <https://www.wikidata.org/wiki/Q1907514> ;
-    iop:hasConstraint 
-        [ a iop:Constraint ;
-            rdfs:isDefinedBy "process" ;
-            rdfs:label "melting" ;
-            iop:constrains <https://www.wikidata.org/entity/Q7561> ;
-        ] .
+    iop:hasProperty <https://www.wikidata.org/wiki/Q1907514> .
 
 iop:AsymmetricSystem
     a iop:Entity ;
